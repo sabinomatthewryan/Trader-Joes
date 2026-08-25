@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portfolio of Matthew Ryan Sabino - IT Student & Developer">
+    <title>Matthew Ryan Sabino | Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- Navigation Bar -->
+    <header class="header-container" id="header_container">
+        <div class="header-top-bar">
+            <a href="#hero_section" class="brand-logo">
+                <span class="logo-accent">M</span>ATT
+            </a>
+            <div class="nav-actions">
+                <button type="button" class="theme-toggle-button" id="theme_toggle" aria-label="Toggle theme">
+                    <span class="theme-icon-dark" id="theme_icon_dark">&#9790;</span>
+                    <span class="theme-icon-light" id="theme_icon_light">&#9728;</span>
+                </button>
+            </div>
+        </div>
+
+        <!-- Nav -->
+        <nav class="side-nav-menu" id="side_nav_menu" aria-label="Side menu">
+            <a href="#about_section" class="side-nav-link">
+                <span class="nav-num">01</span> About
+            </a>
+            <a href="#skills_section" class="side-nav-link">
+                <span class="nav-num">02</span> Skills
+            </a>
+            <a href="#projects_section" class="side-nav-link">
+                <span class="nav-num">03</span> Projects
+            </a>
+            <a href="#testimonials_section" class="side-nav-link">
+                <span class="nav-num">04</span> Testimonials
+            </a>
+            <a href="#contact_section" class="side-nav-link">
+                <span class="nav-num">05</span> Contact
+            </a>
+        </nav>
+    </header>
+
+    <main class="main-content" id="main_content">
+        <!-- Hero Section -->
+        <section class="hero-section" id="hero_section">
+            <div class="hero-wrapper">
+                <div class="hero-text-container">
+                    <h1 class="hero-heading">
+                        Matthew Ryan Sabino
+                    </h1>
+                    <p class="hero-subheading">
+                        Creator of Forge, 4th Year IT Student, & Aspiring IT Professional
+                    </p>
+                    <p class="hero-description">
+                        Passionate about crafting systems, striving for clean
+                        architectures, and intuitive digital experiences.
+                    </p>
+                    <div class="hero-action-group">
+                        <a href="#projects_section" class="action-button-primary">
+                            View Projects
+                        </a>
+                        <a href="#contact_section" class="action-button-secondary">
+                            Get In Touch
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Profile Photo -->
+                <div class="photo-placeholder-wrapper" id="photo_placeholder_wrapper">
+                    <div class="photo-frame">
+                        <img class="profile-photo-img" src="assets/profile-picture.jpeg" alt="Matthew Ryan Sabino" />
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Me Section -->
+        <section class="content-section" id="about_section">
+            <div class="section-header">
+                <span class="section-tag">01 // OVERVIEW</span>
+                <h2 class="section-title">About Me</h2>
+            </div>
+            <div class="about-grid">
+                <div class="about-card main-bio-card">
+                    <h3 class="card-title">Background & Goals</h3>
+                    <p class="card-text">
+                        I am currently a 4th-year Information Technology
+                        student dedicated to learning modern web technologies,
+                        software engineering practices, and system solutions.
+                    </p>
+                    <p class="card-text">
+                        My focus centers on developing reliable, clean, and
+                        maintainable software while continuously adapting to
+                        new tools, methodologies, and industry standards.
+                    </p>
+                </div>
+                <div class="about-card education-card">
+                    <h3 class="card-title">Education</h3>
+                    <div class="timeline-item">
+                        <span class="timeline-year">2023 — Present</span>
+                        <h4 class="timeline-title">
+                            BS in Information Technology
+                        </h4>
+                        <p class="timeline-meta">
+                            De La Salle University - Dasmariñas
+                        </p>
+                    </div>
+                    <div class="timeline-item">
+                        <span class="timeline-year">Focus Areas</span>
+                        <p class="timeline-meta">
+                            Web Development, Systems Design, Database Management
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills / Stack Section -->
+        <section class="content-section" id="skills_section">
+            <div class="section-header">
+                <span class="section-tag">02 // CAPABILITIES</span>
+                <h2 class="section-title">Skills & Tech Stack</h2>
+            </div>
+            <div class="skills-grid">
+                <!-- Frontend Category -->
+                <div class="skill-category-card">
+                    <h3 class="category-heading">Frontend Development</h3>
+                    <div class="badge-list">
+                        <span class="tech-badge">HTML5</span>
+                        <span class="tech-badge">CSS3</span>
+                        <span class="tech-badge">JavaScript</span>
+                        <span class="tech-badge">ReactJS</span>
+                        <span class="tech-badge">Responsive Design</span>
+                    </div>
+                </div>
+
+                <!-- Backend & Databases Category -->
+                <div class="skill-category-card">
+                    <h3 class="category-heading">Backend & Database</h3>
+                    <div class="badge-list">
+                        <span class="tech-badge">PHP</span>
+                        <span class="tech-badge">MySQL</span>
+                        <span class="tech-badge">Python</span>
+                        <span class="tech-badge">NodeJS</span>
+                        <span class="tech-badge">ExpressJS</span>
+                        <span class="tech-badge">Relational Modeling</span>
+                    </div>
+                </div>
+
+                <!-- Tools & Practices Category -->
+                <div class="skill-category-card">
+                    <h3 class="category-heading">Tools & Practices</h3>
+                    <div class="badge-list">
+                        <span class="tech-badge">Git & GitHub</span>
+                        <span class="tech-badge">VS Code</span>
+                        <span class="tech-badge">Antigravity</span>
+                        <span class="tech-badge">Figma</span>
+                        <span class="tech-badge">Google Stitch</span>
+                        <span class="tech-badge">Agile</span>
+                        <span class="tech-badge">Claude and Gemini</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section class="content-section" id="projects_section">
+            <div class="section-header">
+                <span class="section-tag">03 // SELECTED WORKS</span>
+                <h2 class="section-title">Projects</h2>
+            </div>
+            <div class="projects-grid">
+                <!-- Project 1: Forge -->
+                <article class="project-card">
+                    <div class="project-card-header">
+                        <span class="project-number">01</span>
+                        <span class="project-category">Web Application</span>
+                    </div>
+                    <h3 class="project-title">Forge</h3>
+                    <p class="project-description">
+                        Forge is a productivity web application that gamifies focus through a points-based Pomodoro
+                        system. Complete focus sessions to earn points, compete on leaderboards, manage to-dos and
+                        events, and personalize the experience with customizable themes.
+                    </p>
+                    <div class="project-tech-tags">
+                        <span class="mini-tag">Architecture</span>
+                        <span class="mini-tag">Web</span>
+                        <span class="mini-tag">Modular</span>
+                        <span class="mini-tag">React</span>
+                        <span class="mini-tag">Tailwind</span>
+                        <span class="mini-tag">Supabase</span>
+                        <span class="mini-tag">Productivity</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="#contact_section" class="project-link-item">
+                            Learn More &rarr;
+                        </a>
+                    </div>
+                </article>
+
+                <!-- Project 2: Cortex -->
+                <article class="project-card">
+                    <div class="project-card-header">
+                        <span class="project-number">02</span>
+                        <span class="project-category">System Tool</span>
+                    </div>
+                    <h3 class="project-title">Cortex</h3>
+                    <p class="project-description">
+                        Cortex is a personal AI-powered second brain designed to organize your projects, notes,
+                        research, and daily information. It uses automation to process and categorize raw content into
+                        an intelligent, centralized knowledge system that works with you across your devices.
+                    </p>
+                    <div class="project-tech-tags">
+                        <span class="mini-tag">AI Agents</span>
+                        <span class="mini-tag">AI Second Brain</span>
+                        <span class="mini-tag">Antigravity CLI</span>
+                        <span class="mini-tag">Obsidian</span>
+                        <span class="mini-tag">Chatbots</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="#contact_section" class="project-link-item">
+                            Learn More &rarr;
+                        </a>
+                    </div>
+                </article>
+
+                <!-- Project 3: LCDC Document Management System -->
+                <article class="project-card">
+                    <div class="project-card-header">
+                        <span class="project-number">03</span>
+                        <span class="project-category">Enterprise System</span>
+                    </div>
+                    <h3 class="project-title">
+                        LCDC DMS
+                    </h3>
+                    <p class="project-description">
+                        LCDC DMS is a web-based document submission and management system designed for the DLSUD-LCDC.
+                        It streamlines document submission, tracking, review, approval,
+                        storage, and notifications to improve efficiency and accessibility within the organization.
+                    </p>
+                    <div class="project-tech-tags">
+                        <span class="mini-tag">Document Management</span>
+                        <span class="mini-tag">Database</span>
+                        <span class="mini-tag">Security</span>
+                        <span class="mini-tag">ReactJS</span>
+                        <span class="mini-tag">Firebase</span>
+                        <span class="mini-tag">Cloudflare</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="#contact_section" class="project-link-item">
+                            Learn More &rarr;
+                        </a>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- Testimonials Section -->
+        <section class="content-section" id="testimonials_section">
+            <div class="section-header">
+                <span class="section-tag">04 // ENDORSEMENTS</span>
+                <h2 class="section-title">Testimonials</h2>
+            </div>
+            <div class="testimonials-grid">
+                <!-- Testimonial 1 -->
+                <!-- TODO: Add Testimonials here (avatar initials and author details) -->
+                <div class="testimonial-card">
+                    <div class="quote-icon">&#8220;</div>
+                    <p class="testimonial-quote">
+                        Lorem ipsum dolor sit amet consectetur, adipisicing
+                        elit. Dolore reprehenderit, enim asperiores, quod
+                        repellendus iste officiis, rem vero sint minima iure
+                        facere officia libero ipsam deserunt! Neque sunt
+                        animi minus!
+                    </p>
+                    <div class="testimonial-author-meta">
+                        <div class="author-avatar-placeholder">
+                            <span>TM</span>
+                        </div>
+                        <div class="author-details">
+                            <h4 class="author-name">Teammate Contributor</h4>
+                            <p class="author-role">Peer / Collaborator</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section class="content-section" id="contact_section">
+            <div class="section-header">
+                <span class="section-tag">05 // CONNECT</span>
+                <h2 class="section-title">Contact</h2>
+            </div>
+            <div class="contact-layout">
+                <div class="contact-info-panel">
+                    <h3 class="panel-heading">Let's Work Together</h3>
+                    <p class="panel-description">
+                        Feel free to reach out for project collaborations,
+                        internship opportunities, or professional inquiries.
+                    </p>
+                    <div class="contact-details-list">
+                        <div class="contact-detail-row">
+                            <span class="detail-label">Email:</span>
+                            <a href="mailto:sabinomatthewryan@gmail.com" class="detail-value">
+                                sabinomatthewryan@gmail.com
+                            </a>
+                        </div>
+                        <div class="contact-detail-row">
+                            <span class="detail-label">LinkedIn:</span>
+                            <a href="https://www.linkedin.com/in/matthew-sabino" target="_blank" rel="noreferrer"
+                                class="detail-value">
+                                linkedin.com/in/matthew-sabino
+                            </a>
+                        </div>
+                        <div class="contact-detail-row">
+                            <span class="detail-label">GitHub:</span>
+                            <a href="https://github.com/sabinomatthewryan" target="_blank" rel="noreferrer"
+                                class="detail-value">
+                                github.com/sabinomatthewryan
+                            </a>
+                        </div>
+                        <div class="contact-detail-row">
+                            <span class="detail-label">Location:</span>
+                            <span class="detail-value">
+                                Cavite, Philippines
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="contact-form-panel">
+                    <form class="contact-form" id="contact_form">
+                        <div class="form-group">
+                            <label for="contact_name" class="form-label">
+                                Name
+                            </label>
+                            <input type="text" class="form-input" id="contact_name" name="contact_name"
+                                placeholder="Your full name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="contact_email" class="form-label">
+                                Email
+                            </label>
+                            <input type="email" class="form-input" id="contact_email" name="contact_email"
+                                placeholder="name@example.com" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="contact_message" class="form-label">
+                                Message
+                            </label>
+                            <textarea class="form-textarea" id="contact_message" name="contact_message" rows="5"
+                                placeholder="Your message..." required></textarea>
+                        </div>
+                        <button type="submit" class="submit-button" id="submit_button">
+                            Send Message
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer-container" id="footer_container">
+        <div class="footer-content">
+            <p class="footer-copy">
+                &copy; 2026 Matthew Ryan Sabino. All rights reserved.
+            </p>
+            <div class="footer-links">
+                <a href="#hero_section" class="back-to-top">
+                    Back to top &uarr;
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Minimal JavaScript for theme toggling -->
+    <script src="script.js"></script>
+</body>
+
+</html>

@@ -1,78 +1,102 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Group Portfolio</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-<style>
-  :root {
-    --ink: #1e1c22;
-    --ink-soft: #625d68;
-    --paper: #fafaf9;
-    --white: #ffffff;
-    --line: #e6e3e0;
-    --pink-deep: #c85e80;
-    --sage-deep: #4f7548;
-    --radius: 12px;
-    --shadow: 0 4px 16px rgba(30, 28, 34, 0.06);
-    --shadow-md: 0 8px 24px rgba(30, 28, 34, 0.09);
-  }
-  * { box-sizing: border-box; }
-  body {
-    margin: 0;
-    min-height: 100vh;
-    font-family: 'Inter', sans-serif;
-    color: var(--ink);
-    background: var(--paper);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 80px 6% 60px;
-  }
-  h1 {
-    font-family: 'Space Grotesk', sans-serif;
-    font-size: clamp(1.8rem, 4vw, 2.4rem);
-    margin: 0 0 8px;
-  }
-  .sub {
-    color: var(--ink-soft);
-    font-size: 0.95rem;
-    margin: 0 0 44px;
-  }
-  ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    width: 100%;
-    max-width: 480px;
-    display: flex;
-    flex-direction: column;
-    gap: 14px;
-  }
-  li a {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    text-decoration: none;
-    color: var(--ink);
-    background: var(--white);
-    border: 1px solid var(--line);
-    border-left: 3px solid var(--pink-deep);
-    border-radius: var(--radius);
-    padding: 18px 22px;
-    font-family: 'Space Grotesk', sans-serif;
-    font-weight: 600;
-    font-size: 1.02rem;
-    box-shadow: var(--shadow);
-    transition: transform 0.15s ease, box-shadow 0.15s ease;
-  }
-  li:nth-child(2n) a { border-left-color: var(--sage-deep); }
-  li a:hover { transform: translateY(-2px); box-shadow: var(--shadow-md); }
-  li a .arrow { color: var(--ink-soft); font-weight: 500; font-size: 0.9rem; }
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Group Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@600;700&family=Inter:wght@400;500;600&display=swap"
+    rel="stylesheet">
+  <style>
+    :root {
+      --ink: #1e1c22;
+      --ink-soft: #625d68;
+      --paper: #fafaf9;
+      --white: #ffffff;
+      --line: #e6e3e0;
+      --pink-deep: #c85e80;
+      --sage-deep: #4f7548;
+      --radius: 12px;
+      --shadow: 0 4px 16px rgba(30, 28, 34, 0.06);
+      --shadow-md: 0 8px 24px rgba(30, 28, 34, 0.09);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: 'Inter', sans-serif;
+      color: var(--ink);
+      background: var(--paper);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 80px 6% 60px;
+    }
+
+    h1 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: clamp(1.8rem, 4vw, 2.4rem);
+      margin: 0 0 8px;
+    }
+
+    .sub {
+      color: var(--ink-soft);
+      font-size: 0.95rem;
+      margin: 0 0 44px;
+    }
+
+    ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      max-width: 480px;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    li a {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      text-decoration: none;
+      color: var(--ink);
+      background: var(--white);
+      border: 1px solid var(--line);
+      border-left: 3px solid var(--pink-deep);
+      border-radius: var(--radius);
+      padding: 18px 22px;
+      font-family: 'Space Grotesk', sans-serif;
+      font-weight: 600;
+      font-size: 1.02rem;
+      box-shadow: var(--shadow);
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
+    }
+
+    li:nth-child(2n) a {
+      border-left-color: var(--sage-deep);
+    }
+
+    li a:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-md);
+    }
+
+    li a .arrow {
+      color: var(--ink-soft);
+      font-weight: 500;
+      font-size: 0.9rem;
+    }
+  </style>
 </head>
+
 <body>
 
   <h1>Trader Joe's — Group Portfolio</h1>
@@ -80,8 +104,11 @@
 
   <ul>
     <li><a href="lim-jereign/index.html"><span>Jereign B. Lim</span><span class="arrow">view →</span></a></li>
+    <li><a href="sabino-matthewryan/index.html"><span>Matthew Ryan Sabino</span><span class="arrow">view →</span></a>
+    </li>
     <!-- Add more <li> entries here as teammates add their folders -->
   </ul>
 
 </body>
+
 </html>
