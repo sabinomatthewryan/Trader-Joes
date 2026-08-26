@@ -7,7 +7,7 @@
   <title>Group Portfolio</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link
-    href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@600;700&family=Inter:wght@400;500;600&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&display=swap"
     rel="stylesheet">
   <style>
     :root {
@@ -18,9 +18,11 @@
       --line: #e6e3e0;
       --pink-deep: #c85e80;
       --sage-deep: #4f7548;
-      --radius: 12px;
+      --amber: #c8933f;
+      --slate: #4f6f75;
+      --radius: 16px;
       --shadow: 0 4px 16px rgba(30, 28, 34, 0.06);
-      --shadow-md: 0 8px 24px rgba(30, 28, 34, 0.09);
+      --shadow-md: 0 14px 32px rgba(30, 28, 34, 0.12);
     }
 
     * {
@@ -32,84 +34,202 @@
       min-height: 100vh;
       font-family: 'Inter', sans-serif;
       color: var(--ink);
-      background: var(--paper);
+      background:
+        radial-gradient(circle at 12% 8%, rgba(200, 94, 128, 0.08), transparent 40%),
+        radial-gradient(circle at 88% 92%, rgba(79, 117, 72, 0.08), transparent 40%),
+        var(--paper);
+    }
+
+    .wrap {
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 88px 6% 80px;
       display: flex;
       flex-direction: column;
       align-items: center;
-      padding: 80px 6% 60px;
+    }
+
+    .eyebrow {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--pink-deep);
+      margin: 0 0 14px;
     }
 
     h1 {
       font-family: 'Space Grotesk', sans-serif;
-      font-size: clamp(1.8rem, 4vw, 2.4rem);
-      margin: 0 0 8px;
+      font-size: clamp(2rem, 5vw, 2.9rem);
+      line-height: 1.15;
+      margin: 0 0 14px;
+      text-align: center;
     }
 
     .sub {
       color: var(--ink-soft);
-      font-size: 0.95rem;
-      margin: 0 0 44px;
+      font-size: 1rem;
+      max-width: 46ch;
+      text-align: center;
+      margin: 0 0 56px;
     }
 
-    ul {
+    .grid {
       list-style: none;
       margin: 0;
       padding: 0;
       width: 100%;
-      max-width: 480px;
-      display: flex;
-      flex-direction: column;
-      gap: 14px;
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 20px;
     }
 
-    li a {
+    @media (max-width: 620px) {
+      .grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .card {
       display: flex;
       align-items: center;
-      justify-content: space-between;
+      gap: 16px;
       text-decoration: none;
       color: var(--ink);
       background: var(--white);
       border: 1px solid var(--line);
-      border-left: 3px solid var(--pink-deep);
       border-radius: var(--radius);
-      padding: 18px 22px;
+      padding: 22px;
+      box-shadow: var(--shadow);
+      transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .card::before {
+      content: "";
+      position: absolute;
+      inset: 0 auto 0 0;
+      width: 4px;
+      background: var(--accent, var(--pink-deep));
+    }
+
+    .card:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-md);
+      border-color: color-mix(in srgb, var(--accent, var(--pink-deep)) 40%, var(--line));
+    }
+
+    .avatar {
+      flex: none;
+      width: 52px;
+      height: 52px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Space Grotesk', sans-serif;
+      font-weight: 600;
+      font-size: 1.05rem;
+      color: var(--white);
+      background: var(--accent, var(--pink-deep));
+    }
+
+    .info {
+      flex: 1;
+      min-width: 0;
+    }
+
+    .name {
       font-family: 'Space Grotesk', sans-serif;
       font-weight: 600;
       font-size: 1.02rem;
-      box-shadow: var(--shadow);
-      transition: transform 0.15s ease, box-shadow 0.15s ease;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
     }
 
-    li:nth-child(2n) a {
-      border-left-color: var(--sage-deep);
-    }
-
-    li a:hover {
-      transform: translateY(-2px);
-      box-shadow: var(--shadow-md);
-    }
-
-    li a .arrow {
+    .role {
       color: var(--ink-soft);
-      font-weight: 500;
-      font-size: 0.9rem;
+      font-size: 0.85rem;
+      margin-top: 2px;
+    }
+
+    .arrow {
+      flex: none;
+      color: var(--ink-soft);
+      font-size: 1.2rem;
+      transition: transform 0.2s ease, color 0.2s ease;
+    }
+
+    .card:hover .arrow {
+      transform: translateX(3px);
+      color: var(--accent, var(--pink-deep));
+    }
+
+    footer {
+      margin-top: 64px;
+      color: var(--ink-soft);
+      font-size: 0.82rem;
+      text-align: center;
     }
   </style>
 </head>
 
 <body>
 
-  <h1>Trader Joe's — Group Portfolio</h1>
-  <p class="sub">Individual portfolios from each team member.</p>
+  <div class="wrap">
+    <p class="eyebrow">Group Portfolio</p>
+    <h1>Trader Joe's — Team Showcase</h1>
+    <p class="sub">Explore each member's individual portfolio site below.</p>
 
-  <ul>
-    <li><a href="lim-jereign/index.html"><span>Jereign B. Lim</span><span class="arrow">view →</span></a></li>
-    <li><a href="sabino-matthewryan/index.html"><span>Matthew Ryan Sabino</span><span class="arrow">view →</span></a>
-    </li>
-    <li><a href="delacruz-nicko/index.html"><span>Nicko Albert B. Dela Cruz</span><span class="arrow">view →</span></a>
-    <li><a href="ng-paulamitchel/index.html"><span>Paula Mitchel O. Ng</span><span class="arrow">view →</span></a>
-    <!-- Add more <li> entries here as teammates add their folders -->
-  </ul>
+    <ul class="grid">
+      <li>
+        <a class="card" href="lim-jereign/index.html" style="--accent: var(--pink-deep);">
+          <span class="avatar">JL</span>
+          <span class="info">
+            <span class="name">Jereign B. Lim</span>
+            <span class="role">Portfolio</span>
+          </span>
+          <span class="arrow">→</span>
+        </a>
+      </li>
+      <li>
+        <a class="card" href="sabino-matthewryan/index.html" style="--accent: var(--sage-deep);">
+          <span class="avatar">MS</span>
+          <span class="info">
+            <span class="name">Matthew Ryan Sabino</span>
+            <span class="role">Portfolio</span>
+          </span>
+          <span class="arrow">→</span>
+        </a>
+      </li>
+      <li>
+        <a class="card" href="delacruz-nicko/index.html" style="--accent: var(--amber);">
+          <span class="avatar">ND</span>
+          <span class="info">
+            <span class="name">Nicko Albert B. Dela Cruz</span>
+            <span class="role">Portfolio</span>
+          </span>
+          <span class="arrow">→</span>
+        </a>
+      </li>
+      <li>
+        <a class="card" href="ng-paulamitchel/index.html" style="--accent: var(--slate);">
+          <span class="avatar">PN</span>
+          <span class="info">
+            <span class="name">Paula Mitchel O. Ng</span>
+            <span class="role">Portfolio</span>
+          </span>
+          <span class="arrow">→</span>
+        </a>
+      </li>
+      <!-- Add more <li> entries here as teammates add their folders -->
+    </ul>
+
+    <footer>Trader Joe's EA1 — Part 2</footer>
+  </div>
 
 </body>
 
