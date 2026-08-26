@@ -1,308 +1,312 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Paula Mitchel O. Ng — Web Developer &amp; IT Student</title>
-<meta name="description" content="Portfolio of Paula Mitchel O. Ng, Web Development IT student at De La Salle University - Dasmariñas.">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Paula Mitchel O. Ng — Web Developer &amp; IT Student</title>
+  <meta name="description"
+    content="Portfolio of Paula Mitchel O. Ng, Web Development IT student at De La Salle University - Dasmariñas.">
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap"
+    rel="stylesheet">
 
-<link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-<a class="skip-link" href="#main">Skip to main content</a>
+  <a class="skip-link" href="#main">Skip to main content</a>
 
-<!-- Mobile top bar -->
-<header class="topbar">
-  <a href="#about" class="topbar-brand">
-    <span class="topbar-dot" aria-hidden="true"></span>
-    paula<span class="topbar-brand-accent">.dev</span>
-  </a>
-  <button class="topbar-toggle" id="nav_toggle" aria-expanded="false" aria-controls="sidebar_nav" aria-label="Open navigation menu">
-    <span></span><span></span><span></span>
-  </button>
-</header>
-
-<div class="shell">
-
-  <!-- Sidebar / file explorer nav -->
-  <nav class="sidebar" id="sidebar_nav" aria-label="Primary">
-    <div class="sidebar-brand">
+  <!-- Mobile top bar -->
+  <header class="topbar">
+    <a href="#about" class="topbar-brand">
       <span class="topbar-dot" aria-hidden="true"></span>
-      <span>paula<span class="topbar-brand-accent">.dev</span></span>
-    </div>
+      paula<span class="topbar-brand-accent">.dev</span>
+    </a>
+    <button class="topbar-toggle" id="nav_toggle" aria-expanded="false" aria-controls="sidebar_nav"
+      aria-label="Open navigation menu">
+      <span></span><span></span><span></span>
+    </button>
+  </header>
 
-    <p class="sidebar-label">explorer</p>
-    <ul class="sidebar-tree">
-      <li><a href="#about" class="sidebar-link is-active" data-nav>
-        <span class="sidebar-icon" aria-hidden="true">◆</span>about.md</a></li>
-      <li><a href="#education" class="sidebar-link" data-nav>
-        <span class="sidebar-icon" aria-hidden="true">◆</span>education.md</a></li>
-      <li><a href="#experience" class="sidebar-link" data-nav>
-        <span class="sidebar-icon" aria-hidden="true">◆</span>experience.md</a></li>
-      <li><a href="#projects" class="sidebar-link" data-nav>
-        <span class="sidebar-icon" aria-hidden="true">◆</span>projects.md</a></li>
-      <li><a href="#skills" class="sidebar-link" data-nav>
-        <span class="sidebar-icon" aria-hidden="true">◆</span>skills.md</a></li>
-      <li><a href="#testimonials" class="sidebar-link" data-nav>
-        <span class="sidebar-icon" aria-hidden="true">◆</span>testimonials.md</a></li>
-      <li><a href="#contact" class="sidebar-link" data-nav>
-        <span class="sidebar-icon" aria-hidden="true">◆</span>contact.md</a></li>
-    </ul>
+  <div class="shell">
 
-    <div class="sidebar-footer">
-      <a href="mailto:paulamitchel26@gmail.com" class="sidebar-footer-link">paulamitchel26@gmail.com</a>
-      <a href="https://www.linkedin.com/in/paula-ng-7b11473b6/" class="sidebar-footer-link" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
-    </div>
-  </nav>
+    <!-- Sidebar / file explorer nav -->
+    <nav class="sidebar" id="sidebar_nav" aria-label="Primary">
+      <div class="sidebar-brand">
+        <span class="topbar-dot" aria-hidden="true"></span>
+        <span>paula<span class="topbar-brand-accent">.dev</span></span>
+      </div>
 
-  <div class="sidebar-scrim" id="sidebar_scrim" hidden></div>
+      <p class="sidebar-label">explorer</p>
+      <ul class="sidebar-tree">
+        <li><a href="#about" class="sidebar-link is-active" data-nav>
+            <span class="sidebar-icon" aria-hidden="true">◆</span>about.md</a></li>
+        <li><a href="#education" class="sidebar-link" data-nav>
+            <span class="sidebar-icon" aria-hidden="true">◆</span>education.md</a></li>
+        <li><a href="#experience" class="sidebar-link" data-nav>
+            <span class="sidebar-icon" aria-hidden="true">◆</span>experience.md</a></li>
+        <li><a href="#projects" class="sidebar-link" data-nav>
+            <span class="sidebar-icon" aria-hidden="true">◆</span>projects.md</a></li>
+        <li><a href="#skills" class="sidebar-link" data-nav>
+            <span class="sidebar-icon" aria-hidden="true">◆</span>skills.md</a></li>
+        <li><a href="#testimonials" class="sidebar-link" data-nav>
+            <span class="sidebar-icon" aria-hidden="true">◆</span>testimonials.md</a></li>
+        <li><a href="#contact" class="sidebar-link" data-nav>
+            <span class="sidebar-icon" aria-hidden="true">◆</span>contact.md</a></li>
+      </ul>
 
-  <!-- Main content -->
-  <main id="main">
+      <div class="sidebar-footer">
+        <a href="mailto:paulamitchel26@gmail.com" class="sidebar-footer-link">paulamitchel26@gmail.com</a>
+        <a href="https://www.linkedin.com/in/paula-ng-7b11473b6/" class="sidebar-footer-link" target="_blank"
+          rel="noopener noreferrer">LinkedIn ↗</a>
+      </div>
+    </nav>
 
-    <!-- ABOUT -->
-    <section id="about" class="section section-hero" aria-labelledby="about_heading">
-      <div class="section-inner">
-        <p class="eyebrow">about.md</p>
-        <h1 id="about_heading" class="hero-name">Paula Mitchel O. Ng</h1>
-        <p class="hero-role">Web Developer &amp; IT Student</p>
-        <p class="hero-blurb">
-          I'm an Information Technology student at De La Salle University - Dasmariñas,
-          majoring in Web Development, where I keep a 3.71 GPA while balancing full-stack
-          development work with student leadership. I like building things that hold up
-          under real use, clean interfaces backed by dependable data, tested carefully
-          before they ship.
-        </p>
+    <div class="sidebar-scrim" id="sidebar_scrim" hidden></div>
 
-        <div class="hero-grid">
-          <div class="editor-card" role="img" aria-label="Profile summary displayed as a code object: name Paula Mitchel O. Ng, role Web Developer and IT Student, GPA 3.71, university De La Salle University - Dasmariñas, focus areas Full-stack Development, Quality Assurance, and Leadership.">
-            <div class="editor-card-bar">
-              <span class="editor-card-dot editor-card-dot-red"></span>
-              <span class="editor-card-dot editor-card-dot-amber"></span>
-              <span class="editor-card-dot editor-card-dot-green"></span>
-              <span class="editor-card-filename">profile.ts</span>
-            </div>
-            <pre class="editor-card-code"><code><span class="tok-kw">const</span> <span class="tok-var">profile</span> = {
+    <!-- Main content -->
+    <main id="main">
+
+      <!-- ABOUT -->
+      <section id="about" class="section section-hero" aria-labelledby="about_heading">
+        <div class="section-inner">
+          <p class="eyebrow">about.md</p>
+          <h1 id="about_heading" class="hero-name">Paula Mitchel O. Ng</h1>
+          <p class="hero-role">Web Developer &amp; IT Student</p>
+          <p class="hero-blurb">
+            I'm an Information Technology student at De La Salle University - Dasmariñas,
+            majoring in Web Development, where I keep a 3.71 GPA while balancing full-stack
+            development work with student leadership. I like building things that hold up
+            under real use, clean interfaces backed by dependable data, tested carefully
+            before they ship.
+          </p>
+
+          <div class="hero-grid">
+            <div class="editor-card" role="img"
+              aria-label="Profile summary displayed as a code object: name Paula Mitchel O. Ng, role Web Developer and IT Student, GPA 3.71, university De La Salle University - Dasmariñas, focus areas Full-stack Development, Quality Assurance, and Leadership.">
+              <div class="editor-card-bar">
+                <span class="editor-card-dot editor-card-dot-red"></span>
+                <span class="editor-card-dot editor-card-dot-amber"></span>
+                <span class="editor-card-dot editor-card-dot-green"></span>
+                <span class="editor-card-filename">profile.ts</span>
+              </div>
+              <pre class="editor-card-code"><code><span class="tok-kw">const</span> <span class="tok-var">profile</span> = {
   <span class="tok-key">name</span>: <span class="tok-str">"Paula Mitchel O. Ng"</span>,
   <span class="tok-key">role</span>: <span class="tok-str">"Web Developer & IT Student"</span>,
   <span class="tok-key">university</span>: <span class="tok-str">"De La Salle University - Dasmariñas"</span>,
   <span class="tok-key">gpa</span>: <span class="tok-num">3.71</span>,
   <span class="tok-key">focus</span>: [<span class="tok-str">"Full-stack Dev"</span>, <span class="tok-str">"QA"</span>, <span class="tok-str">"Leadership"</span>],
 };</code></pre>
+            </div>
+
+            <div class="stat-stack">
+              <div class="stat-card">
+                <p class="stat-card-value">3.71</p>
+                <p class="stat-card-label">Cumulative GPA</p>
+              </div>
+              <div class="stat-card">
+                <p class="stat-card-value">6×</p>
+                <p class="stat-card-label">Honors distinctions</p>
+              </div>
+              <div class="stat-card">
+                <p class="stat-card-value">3</p>
+                <p class="stat-card-label">Featured builds</p>
+              </div>
+            </div>
           </div>
 
-          <div class="stat-stack">
-            <div class="stat-card">
-              <p class="stat-card-value">3.71</p>
-              <p class="stat-card-label">Cumulative GPA</p>
-            </div>
-            <div class="stat-card">
-              <p class="stat-card-value">6×</p>
-              <p class="stat-card-label">Honors distinctions</p>
-            </div>
-            <div class="stat-card">
-              <p class="stat-card-value">3</p>
-              <p class="stat-card-label">Featured builds</p>
-            </div>
+          <div class="hero-actions">
+            <a href="#projects" class="btn btn-primary">View projects</a>
+            <a href="#contact" class="btn btn-ghost">Get in touch</a>
           </div>
         </div>
+      </section>
 
-        <div class="hero-actions">
-          <a href="#projects" class="btn btn-primary">View projects</a>
-          <a href="#contact" class="btn btn-ghost">Get in touch</a>
-        </div>
-      </div>
-    </section>
+      <!-- EDUCATION -->
+      <section id="education" class="section" aria-labelledby="education_heading">
+        <div class="section-inner">
+          <p class="eyebrow">education.md</p>
+          <h2 id="education_heading" class="section-title">Education</h2>
 
-    <!-- EDUCATION -->
-    <section id="education" class="section" aria-labelledby="education_heading">
-      <div class="section-inner">
-        <p class="eyebrow">education.md</p>
-        <h2 id="education_heading" class="section-title">Education</h2>
-
-        <div class="card card-education">
-          <div class="card-head">
-            <h3 class="card-title">BS in Information Technology — Web Development Track</h3>
-            <p class="card-meta">De La Salle University – Dasmariñas</p>
-          </div>
-          <p class="card-body">
-            Coursework and project work centered on full-stack web development,
-            database design, and software quality assurance, paired with hands-on
-            leadership experience within the college's student government.
-          </p>
-          
-          <ul class="badge-list" aria-label="Honors and distinctions">
-            <li class="badge badge-pink-soft">CHED Merit Scholar</li>
-            <li class="badge badge-neutral">First Honors Dean's Lister</li>
-            <li class="badge badge-pink-solid">Director of Internal Affairs, CICS Student Government</li>
-            <li class="badge badge-pink-soft">Project Head, SIKAPTala 2026</li>
-            <li class="badge badge-neutral">3.71 Cumulative GPA</li>
-          </ul>
-          
-        </div>
-      </div>
-    </section>
-
-    <!-- EXPERIENCE -->
-    <section id="experience" class="section" aria-labelledby="experience_heading">
-      <div class="section-inner">
-        <p class="eyebrow">experience.md</p>
-        <h2 id="experience_heading" class="section-title">Work Experience</h2>
-
-        <div class="timeline">
-          <div class="card card-timeline">
+          <div class="card card-education">
             <div class="card-head">
-              <h3 class="card-title">Student Assistant</h3>
-              <p class="card-meta">Hermania D. Torres "Quality Assurance" Office</p>
+              <h3 class="card-title">BS in Information Technology — Web Development Track</h3>
+              <p class="card-meta">De La Salle University – Dasmariñas</p>
             </div>
             <p class="card-body">
-              Supported the office's quality assurance operations with a focus on
-              data integrity and verification — reviewing records for accuracy and
-              flagging discrepancies before they reached final documentation.
+              Coursework and project work centered on full-stack web development,
+              database design, and software quality assurance, paired with hands-on
+              leadership experience within the college's student government.
             </p>
-          </div>
 
-          <div class="card card-timeline">
-            <div class="card-head">
-              <h3 class="card-title">Data Entry Intern</h3>
-              <p class="card-meta">Begone Skin &amp; Body Clinic</p>
+            <ul class="badge-list" aria-label="Honors and distinctions">
+              <li class="badge badge-pink-soft">CHED Merit Scholar</li>
+              <li class="badge badge-neutral">First Honors Dean's Lister</li>
+              <li class="badge badge-pink-solid">Director of Internal Affairs, CICS Student Government</li>
+              <li class="badge badge-pink-soft">Project Head, SIKAPTala 2026</li>
+              <li class="badge badge-neutral">3.71 Cumulative GPA</li>
+            </ul>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- EXPERIENCE -->
+      <section id="experience" class="section" aria-labelledby="experience_heading">
+        <div class="section-inner">
+          <p class="eyebrow">experience.md</p>
+          <h2 id="experience_heading" class="section-title">Work Experience</h2>
+
+          <div class="timeline">
+            <div class="card card-timeline">
+              <div class="card-head">
+                <h3 class="card-title">Student Assistant</h3>
+                <p class="card-meta">Hermania D. Torres "Quality Assurance" Office</p>
+              </div>
+              <p class="card-body">
+                Supported the office's quality assurance operations with a focus on
+                data integrity and verification — reviewing records for accuracy and
+                flagging discrepancies before they reached final documentation.
+              </p>
             </div>
-            <p class="card-body">
-              Handled day-to-day data entry inputs for client and administrative
-              records, helping streamline workflows and improve overall
-              administrative efficiency.
-            </p>
+
+            <div class="card card-timeline">
+              <div class="card-head">
+                <h3 class="card-title">Data Entry Intern</h3>
+                <p class="card-meta">Begone Skin &amp; Body Clinic</p>
+              </div>
+              <p class="card-body">
+                Handled day-to-day data entry inputs for client and administrative
+                records, helping streamline workflows and improve overall
+                administrative efficiency.
+              </p>
+            </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <!-- PROJECTS -->
-    <section id="projects" class="section" aria-labelledby="projects_heading">
-      <div class="section-inner">
-        <p class="eyebrow">projects.md</p>
-        <h2 id="projects_heading" class="section-title">Featured Projects</h2>
+      <!-- PROJECTS -->
+      <section id="projects" class="section" aria-labelledby="projects_heading">
+        <div class="section-inner">
+          <p class="eyebrow">projects.md</p>
+          <h2 id="projects_heading" class="section-title">Featured Projects</h2>
 
-        <div class="repo-grid">
-          
-          <!-- CODEVAULT -->
-          <article class="repo-card">
-            <header class="repo-card-head">
-              <span class="repo-card-icon" aria-hidden="true">⌥</span>
-              <h3 class="repo-card-title"><a href="https://code-vault-v2.vercel.app/" target="_blank" rel="noopener noreferrer" style="text-decoration: none; color: inherit;">CodeVault ↗</a></h3>
-            </header>
-            <p class="repo-card-desc">
-              A full-stack browser-based cloud IDE supporting real-time compilation across multiple languages, featuring secure cloud storage and an integrated Monaco Editor.
-            </p>
-            <ul class="tag-list" aria-label="Tech stack for CodeVault">
-              <li class="tag">React</li>
-              <li class="tag">Vite</li>
-              <li class="tag">Tailwind CSS</li>
-              <li class="tag">Supabase</li>
-              <li class="tag">Monaco Editor</li>
-              <li class="tag">Vercel</li>
-            </ul>
-          </article>
+          <div class="repo-grid">
 
-          <!-- ANISKOLAR -->
-          <article class="repo-card">
-            <header class="repo-card-head">
-              <span class="repo-card-icon" aria-hidden="true">⌥</span>
-              <h3 class="repo-card-title">AniSkolar <span style="font-size: 0.75rem; font-weight: normal; opacity: 0.7;">(Coming Soon)</span></h3>
-            </header>
-            <p class="repo-card-desc">
-              A scholarship management system for De La Salle University - Dasmariñas, built to automate report generation and simplify applications with a real-time student dashboard.
-            </p>
-            <ul class="tag-list" aria-label="Tech stack for AniSkolar">
-              <li class="tag">React</li>
-              <li class="tag">Tailwind CSS</li>
-              <li class="tag">Laravel</li>
-              <li class="tag">MongoDB</li>
-            </ul>
-          </article>
+            <!-- CODEVAULT -->
+            <article class="repo-card">
+              <header class="repo-card-head">
+                <span class="repo-card-icon" aria-hidden="true">⌥</span>
+                <h3 class="repo-card-title"><a href="https://code-vault-v2.vercel.app/" target="_blank"
+                    rel="noopener noreferrer" style="text-decoration: none; color: inherit;">CodeVault ↗</a></h3>
+              </header>
+              <p class="repo-card-desc">
+                A full-stack browser-based cloud IDE supporting real-time compilation across multiple languages,
+                featuring secure cloud storage and an integrated Monaco Editor.
+              </p>
+              <ul class="tag-list" aria-label="Tech stack for CodeVault">
+                <li class="tag">React</li>
+                <li class="tag">Vite</li>
+                <li class="tag">Tailwind CSS</li>
+                <li class="tag">Supabase</li>
+                <li class="tag">Monaco Editor</li>
+                <li class="tag">Vercel</li>
+              </ul>
+            </article>
 
-          <!-- STARBOARD -->
-          <article class="repo-card">
-            <header class="repo-card-head">
-              <span class="repo-card-icon" aria-hidden="true">⌥</span>
-              <h3 class="repo-card-title">Starboard <span style="font-size: 0.75rem; font-weight: normal; opacity: 0.7;">(Coming Soon)</span></h3>
-            </header>
-            <p class="repo-card-desc">
-              An AI-powered task management app featuring natural language brain-dump parsing, automated workflow optimization, and a built-in Pomodoro focus timer.
-            </p>
-            <ul class="tag-list" aria-label="Tech stack for Starboard">
-              <li class="tag">Next.js</li>
-              <li class="tag">React</li>
-              <li class="tag">Zustand</li>
-              <li class="tag">Supabase</li>
-              <li class="tag">Google Gemini API</li>
-              <li class="tag">Vercel</li>
-            </ul>
-          </article>
+            <!-- ANISKOLAR -->
+            <article class="repo-card">
+              <header class="repo-card-head">
+                <span class="repo-card-icon" aria-hidden="true">⌥</span>
+                <h3 class="repo-card-title">AniSkolar <span
+                    style="font-size: 0.75rem; font-weight: normal; opacity: 0.7;">(Coming Soon)</span></h3>
+              </header>
+              <p class="repo-card-desc">
+                A scholarship management system for De La Salle University - Dasmariñas, built to automate report
+                generation and simplify applications with a real-time student dashboard.
+              </p>
+              <ul class="tag-list" aria-label="Tech stack for AniSkolar">
+                <li class="tag">React</li>
+                <li class="tag">Tailwind CSS</li>
+                <li class="tag">Laravel</li>
+                <li class="tag">MongoDB</li>
+              </ul>
+            </article>
 
-        </div>
-      </div>
-    </section>
+            <!-- STARBOARD -->
+            <article class="repo-card">
+              <header class="repo-card-head">
+                <span class="repo-card-icon" aria-hidden="true">⌥</span>
+                <h3 class="repo-card-title">Starboard <span
+                    style="font-size: 0.75rem; font-weight: normal; opacity: 0.7;">(Coming Soon)</span></h3>
+              </header>
+              <p class="repo-card-desc">
+                An AI-powered task management app featuring natural language brain-dump parsing, automated workflow
+                optimization, and a built-in Pomodoro focus timer.
+              </p>
+              <ul class="tag-list" aria-label="Tech stack for Starboard">
+                <li class="tag">Next.js</li>
+                <li class="tag">React</li>
+                <li class="tag">Zustand</li>
+                <li class="tag">Supabase</li>
+                <li class="tag">Google Gemini API</li>
+                <li class="tag">Vercel</li>
+              </ul>
+            </article>
 
-    <!-- SKILLS -->
-    <section id="skills" class="section" aria-labelledby="skills_heading">
-      <div class="section-inner">
-        <p class="eyebrow">skills.md</p>
-        <h2 id="skills_heading" class="section-title">Skills</h2>
-
-        <div class="skill-grid">
-          <div class="skill-group">
-            <p class="skill-group-comment">// Web Development</p>
-            <ul class="tag-list">
-              <li class="tag tag-outline">React.js</li>
-              <li class="tag tag-outline">Node.js</li>
-              <li class="tag tag-outline">Laravel</li>
-              <li class="tag tag-outline">Tailwind CSS</li>
-              <li class="tag tag-outline">JavaScript</li>
-            </ul>
-          </div>
-
-          <div class="skill-group">
-            <p class="skill-group-comment">// Databases &amp; Version Control</p>
-            <ul class="tag-list">
-              <li class="tag tag-outline">SQL</li>
-              <li class="tag tag-outline">MongoDB</li>
-              <li class="tag tag-outline">Git</li>
-            </ul>
-          </div>
-
-          <div class="skill-group">
-            <p class="skill-group-comment">// Quality Assurance &amp; Testing</p>
-            <ul class="tag-list">
-              <li class="tag tag-outline">Data Verification</li>
-              <li class="tag tag-outline">Manual Testing</li>
-              <li class="tag tag-outline">Documentation Review</li>
-            </ul>
-          </div>
-
-          <div class="skill-group">
-            <p class="skill-group-comment">// Leadership</p>
-            <ul class="tag-list">
-              <li class="tag tag-outline">Team Coordination</li>
-              <li class="tag tag-outline">Student Governance</li>
-              <li class="tag tag-outline">Event Organization</li>
-            </ul>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <!-- TESTIMONIALS -->
-    <section id="testimonials" class="section" aria-labelledby="testimonials_heading">
-      <div class="section-inner">
-        <p class="eyebrow">testimonials.md</p>
-        <h2 id="testimonials_heading" class="section-title">Testimonials &amp; Endorsements</h2>
+      <!-- SKILLS -->
+      <section id="skills" class="section" aria-labelledby="skills_heading">
+        <div class="section-inner">
+          <p class="eyebrow">skills.md</p>
+          <h2 id="skills_heading" class="section-title">Skills</h2>
 
+          <div class="skill-grid">
+            <div class="skill-group">
+              <p class="skill-group-comment">// Web Development</p>
+              <ul class="tag-list">
+                <li class="tag tag-outline">React.js</li>
+                <li class="tag tag-outline">Node.js</li>
+                <li class="tag tag-outline">Laravel</li>
+                <li class="tag tag-outline">Tailwind CSS</li>
+                <li class="tag tag-outline">JavaScript</li>
+              </ul>
+            </div>
+
+            <div class="skill-group">
+              <p class="skill-group-comment">// Databases &amp; Version Control</p>
+              <ul class="tag-list">
+                <li class="tag tag-outline">SQL</li>
+                <li class="tag tag-outline">MongoDB</li>
+                <li class="tag tag-outline">Git</li>
+              </ul>
+            </div>
+
+            <div class="skill-group">
+              <p class="skill-group-comment">// Quality Assurance &amp; Testing</p>
+              <ul class="tag-list">
+                <li class="tag tag-outline">Data Verification</li>
+                <li class="tag tag-outline">Manual Testing</li>
+                <li class="tag tag-outline">Documentation Review</li>
+              </ul>
+            </div>
+
+            <div class="skill-group">
+              <p class="skill-group-comment">// Leadership</p>
+              <ul class="tag-list">
+                <li class="tag tag-outline">Team Coordination</li>
+                <li class="tag tag-outline">Student Governance</li>
+                <li class="tag tag-outline">Event Organization</li>
+              </ul>
+            </div>
         <div class="timeline">
           <div class="card card-timeline">
             <div class="card-head">
@@ -314,52 +318,79 @@
               consistently contributing high-quality work and collaborating 
               effectively with the team. Her dedication and attention to detail 
               were instrumental in the success of our project."
-            </p>
-          </div>
-
-          <div class="card card-timeline">
-            <div class="card-head">
-              <h3 class="card-title">Name</h3>
-              <p class="card-meta">Role/Title</p>
+              <h3 class="card-title">Jereign Lim</h3>
+              <p class="card-meta">Project teammate</p>
             </div>
             <p class="card-body">
-              "Lorem Ipusm Lorem Ipusm Lorem Ipusm Lorem Ipusm Lorem Ipusm "            </p>
+              "Paula has a great eye for detail and made sure our project stayed organized even when deadlines got tight."
+            </p>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <!-- CONTACT -->
-    <section id="contact" class="section" aria-labelledby="contact_heading">
-      <div class="section-inner">
-        <p class="eyebrow">contact.md</p>
-        <h2 id="contact_heading" class="section-title">Get in Touch</h2>
-        <p class="section-intro">
-          Have an opportunity, a question, or just want to connect? Reach me directly through email or LinkedIn.
-        </p>
+      <!-- TESTIMONIALS -->
+      <section id="testimonials" class="section" aria-labelledby="testimonials_heading">
+        <div class="section-inner">
+          <p class="eyebrow">testimonials.md</p>
+          <h2 id="testimonials_heading" class="section-title">Testimonials &amp; Endorsements</h2>
 
-        <div class="contact-card" aria-label="Direct contact details" style="max-width: 500px; margin-top: 2rem;">
-          <h3 class="contact-card-title">Direct lines</h3>
-          <a class="contact-card-row" href="mailto:paulamitchel26@gmail.com">
-            <span class="contact-card-label">Email</span>
-            <span class="contact-card-value">paulamitchel26@gmail.com</span>
-          </a>
-          <a class="contact-card-row" href="https://www.linkedin.com/in/paula-ng-7b11473b6/" target="_blank" rel="noopener noreferrer">
-            <span class="contact-card-label">LinkedIn</span>
-            <span class="contact-card-value">/in/paula-ng-7b11473b6 ↗</span>
-          </a>
-          <p class="contact-card-note">Based in Dasmariñas, Cavite, Philippines.</p>
+          <div class="timeline">
+            <div class="card card-timeline">
+              <div class="card-head">
+                <h3 class="card-title">Matthew Sabino</h3>
+                <p class="card-meta">Project Teammate</p>
+              </div>
+              <p class="card-body">
+                " Paula is a reliable team member who consistently delivers quality work. She is diligent, adaptable,
+                and possesses strong problem-solving skills, a great asset to any development team. "
+              </p>
+            </div>
+
+            <div class="card card-timeline">
+              <div class="card-head">
+                <h3 class="card-title">Name</h3>
+                <p class="card-meta">Role/Title</p>
+              </div>
+              <p class="card-body">
+                "Lorem Ipusm Lorem Ipusm Lorem Ipusm Lorem Ipusm Lorem Ipusm " </p>
+            </div>
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <footer class="footer">
-      <p>© <span id="year"></span> by Paula Mitchel O. Ng</p>
-    </footer>
+      <!-- CONTACT -->
+      <section id="contact" class="section" aria-labelledby="contact_heading">
+        <div class="section-inner">
+          <p class="eyebrow">contact.md</p>
+          <h2 id="contact_heading" class="section-title">Get in Touch</h2>
+          <p class="section-intro">
+            Have an opportunity, a question, or just want to connect? Reach me directly through email or LinkedIn.
+          </p>
 
-  </main>
-</div>
+          <div class="contact-card" aria-label="Direct contact details" style="max-width: 500px; margin-top: 2rem;">
+            <h3 class="contact-card-title">Direct lines</h3>
+            <a class="contact-card-row" href="mailto:paulamitchel26@gmail.com">
+              <span class="contact-card-label">Email</span>
+              <span class="contact-card-value">paulamitchel26@gmail.com</span>
+            </a>
+            <a class="contact-card-row" href="https://www.linkedin.com/in/paula-ng-7b11473b6/" target="_blank"
+              rel="noopener noreferrer">
+              <span class="contact-card-label">LinkedIn</span>
+              <span class="contact-card-value">/in/paula-ng-7b11473b6 ↗</span>
+            </a>
+            <p class="contact-card-note">Based in Dasmariñas, Cavite, Philippines.</p>
+          </div>
+        </div>
+      </section>
 
-<script src="script.js"></script>
+      <footer class="footer">
+        <p>© <span id="year"></span> by Paula Mitchel O. Ng</p>
+      </footer>
+
+    </main>
+  </div>
+
+  <script src="script.js"></script>
 </body>
+
 </html>
