@@ -391,6 +391,56 @@ h1, h2, h3 { font-family: var(--font-display); margin: 0; }
   border-color: var(--accent-dark);
 }
 
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 640px);
+  gap: 24px;
+}
+
+.testimonial-card {
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 28px;
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+
+.testimonial-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 14px 30px -18px rgba(51, 43, 33, 0.35);
+}
+
+.testimonial-quote {
+  color: var(--ink);
+  font-family: var(--font-display);
+  font-size: 21px;
+  line-height: 1.45;
+  margin: 0 0 24px;
+}
+
+.testimonial-quote::before {
+  color: var(--accent);
+  content: "\201C";
+  font-size: 32px;
+  line-height: 0;
+  margin-right: 3px;
+  vertical-align: -5px;
+}
+
+.testimonial-author {
+  color: var(--ink);
+  font-size: 15px;
+  font-weight: 600;
+  margin: 0;
+}
+
+.testimonial-role {
+  color: var(--ink-soft);
+  font-family: var(--font-mono);
+  font-size: 12.5px;
+  margin: 3px 0 0;
+}
+
 .contact-grid {
   display: grid;
   grid-template-columns: 0.9fr 1.1fr;
@@ -564,6 +614,7 @@ h1, h2, h3 { font-family: var(--font-display); margin: 0; }
 
   .skills-grid { grid-template-columns: 1fr; gap: 30px; }
   .projects-grid { grid-template-columns: 1fr; }
+  .testimonials-grid { grid-template-columns: 1fr; }
   .contact-grid { grid-template-columns: 1fr; gap: 40px; }
 }
 
@@ -580,6 +631,7 @@ h1, h2, h3 { font-family: var(--font-display); margin: 0; }
   }
 
   .project-card:hover,
+  .testimonial-card:hover,
   .submit-btn:hover,
   .back-to-top {
     transition: none;
@@ -598,6 +650,7 @@ h1, h2, h3 { font-family: var(--font-display); margin: 0; }
       <a href="#education" class="dirlink" data-nav>/education</a>
       <a href="#skills" class="dirlink" data-nav>/skills</a>
       <a href="#projects" class="dirlink" data-nav>/projects</a>
+      <a href="#testimonials" class="dirlink" data-nav>/testimonials</a>
       <a href="#contact" class="dirlink" data-nav>/contact</a>
     </nav>
     <button class="dirbar-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
@@ -732,9 +785,35 @@ h1, h2, h3 { font-family: var(--font-display); margin: 0; }
     </div>
   </section>
 
+  <section class="section" id="testimonials">
+    <div class="section-inner reveal">
+      <p class="section-tag">05 — testimonials</p>
+      <h2 class="section-title">Kind words from teammates</h2>
+
+      <div class="testimonials-grid">
+        <article class="testimonial-card">
+          <p class="testimonial-quote">Nicko was dependable throughout our 
+          project and always helped turn our ideas into a working website.</p>
+          <p class="testimonial-author">Maria Santos</p>
+          <p class="testimonial-role">Project teammate</p>
+        </article>
+      </div>
+      <!--- COPY THIS
+      <div class="testimonials-grid">
+        <article class="testimonial-card">
+          <p class="testimonial-quote">Nicko was dependable throughout our project
+          and always helped turn our ideas into a working website.</p>
+          <p class="testimonial-author">Maria Santos</p>
+          <p class="testimonial-role">Project teammate</p>
+        </article>
+      </div>
+    -->
+    </div>
+  </section>
+
   <section class="section" id="contact">
     <div class="section-inner reveal">
-      <p class="section-tag">05 — contact</p>
+      <p class="section-tag">06 — contact</p>
       <h2 class="section-title">Let's talk</h2>
 
       <div class="contact-grid">
