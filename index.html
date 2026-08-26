@@ -4,91 +4,112 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Group Portfolio</title>
+  <title>Trader Joe's — Group Portfolio</title>
+  <meta name="description" content="Group Portfolio hub for Trader Joe's - 4th Year IT Students.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
-    href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap"
     rel="stylesheet">
   <style>
     :root {
-      --ink: #1e1c22;
-      --ink-soft: #625d68;
-      --paper: #fafaf9;
-      --white: #ffffff;
-      --line: #e6e3e0;
-      --pink-deep: #c85e80;
-      --sage-deep: #4f7548;
-      --amber: #c8933f;
-      --slate: #4f6f75;
-      --radius: 16px;
-      --shadow: 0 4px 16px rgba(30, 28, 34, 0.06);
-      --shadow-md: 0 14px 32px rgba(30, 28, 34, 0.12);
+      --bg: #0d0f12;
+      --bg-card: #15181e;
+      --bg-card-hover: #1c2028;
+      --border: rgba(255, 255, 255, 0.08);
+      --border-hover: rgba(255, 255, 255, 0.2);
+      --text-main: #f3f4f6;
+      --text-muted: #9ca3af;
+      --text-dim: #6b7280;
+      --accent-pink: #e08aa6;
+      --accent-sage: #7fa377;
+      --accent-blue: #60a5fa;
+      --accent-amber: #f59e0b;
+      --font-display: 'Space Grotesk', sans-serif;
+      --font-body: 'Inter', sans-serif;
+      --font-mono: 'JetBrains Mono', monospace;
+      --radius-lg: 16px;
+      --radius-full: 9999px;
+      --transition: 0.2s cubic-bezier(0.16, 1, 0.3, 1);
     }
 
     * {
       box-sizing: border-box;
+      margin: 0;
+      padding: 0;
     }
 
     body {
-      margin: 0;
       min-height: 100vh;
-      font-family: 'Inter', sans-serif;
-      color: var(--ink);
-      background:
-        radial-gradient(circle at 12% 8%, rgba(200, 94, 128, 0.08), transparent 40%),
-        radial-gradient(circle at 88% 92%, rgba(79, 117, 72, 0.08), transparent 40%),
-        var(--paper);
-    }
-
-    .wrap {
-      max-width: 980px;
-      margin: 0 auto;
-      padding: 88px 6% 80px;
+      font-family: var(--font-body);
+      color: var(--text-main);
+      background-color: var(--bg);
+      background-image: 
+        radial-gradient(ellipse 80% 50% at 50% -20%, rgba(120, 119, 198, 0.15), transparent 100%),
+        radial-gradient(circle 500px at 50% 100%, rgba(224, 138, 166, 0.05), transparent);
       display: flex;
       flex-direction: column;
       align-items: center;
+      justify-content: center;
+      padding: 3rem 1.5rem;
     }
 
-    .eyebrow {
-      font-family: 'Space Grotesk', sans-serif;
-      font-size: 0.78rem;
-      font-weight: 600;
-      letter-spacing: 0.14em;
+    .container {
+      width: 100%;
+      max-width: 760px;
+    }
+
+    /* Header */
+    .header {
+      text-align: center;
+      margin-bottom: 2.5rem;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.35rem 0.85rem;
+      border-radius: var(--radius-full);
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid var(--border);
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      letter-spacing: 0.05em;
+      color: var(--text-muted);
+      margin-bottom: 1rem;
       text-transform: uppercase;
-      color: var(--pink-deep);
-      margin: 0 0 14px;
+    }
+
+    .badge-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: #22c55e;
+      box-shadow: 0 0 8px rgba(34, 197, 94, 0.6);
     }
 
     h1 {
-      font-family: 'Space Grotesk', sans-serif;
-      font-size: clamp(2rem, 5vw, 2.9rem);
-      line-height: 1.15;
-      margin: 0 0 14px;
-      text-align: center;
+      font-family: var(--font-display);
+      font-size: clamp(2rem, 5vw, 2.75rem);
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      margin-bottom: 0.5rem;
     }
 
-    .sub {
-      color: var(--ink-soft);
+    .subtitle {
+      color: var(--text-muted);
       font-size: 1rem;
-      max-width: 46ch;
-      text-align: center;
-      margin: 0 0 56px;
+      max-width: 460px;
+      margin: 0 auto;
     }
 
+    /* Grid */
     .grid {
-      list-style: none;
-      margin: 0;
-      padding: 0;
-      width: 100%;
       display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 20px;
-    }
-
-    @media (max-width: 620px) {
-      .grid {
-        grid-template-columns: 1fr;
-      }
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 1rem;
+      list-style: none;
     }
 
     .card {
@@ -96,140 +117,172 @@
       align-items: center;
       gap: 16px;
       text-decoration: none;
-      color: var(--ink);
-      background: var(--white);
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      padding: 22px;
-      box-shadow: var(--shadow);
-      transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+      color: inherit;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 1.25rem 1.4rem;
+      transition: all var(--transition);
       position: relative;
       overflow: hidden;
     }
 
     .card::before {
-      content: "";
+      content: '';
       position: absolute;
-      inset: 0 auto 0 0;
-      width: 4px;
-      background: var(--accent, var(--pink-deep));
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: 3px;
+      background: var(--accent-color, var(--accent-pink));
+      opacity: 0.6;
+      transition: opacity var(--transition), width var(--transition);
     }
 
     .card:hover {
-      transform: translateY(-3px);
-      box-shadow: var(--shadow-md);
-      border-color: color-mix(in srgb, var(--accent, var(--pink-deep)) 40%, var(--line));
+      background: var(--bg-card-hover);
+      border-color: var(--border-hover);
+      transform: translateY(-2px);
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
+    }
+
+    .card:hover::before {
+      opacity: 1;
+      width: 4px;
+    }
+
+    .card-content {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
     }
 
     .avatar {
-      flex: none;
-      width: 52px;
-      height: 52px;
-      border-radius: 50%;
+      width: 44px;
+      height: 44px;
+      border-radius: 12px;
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid var(--border);
       display: flex;
       align-items: center;
       justify-content: center;
-      font-family: 'Space Grotesk', sans-serif;
-      font-weight: 600;
-      font-size: 1.05rem;
-      color: var(--white);
-      background: var(--accent, var(--pink-deep));
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 0.95rem;
+      color: var(--accent-color, var(--text-main));
     }
 
     .info {
-      flex: 1;
-      min-width: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 0.2rem;
     }
 
     .name {
-      font-family: 'Space Grotesk', sans-serif;
+      font-family: var(--font-display);
+      font-size: 1.05rem;
       font-weight: 600;
-      font-size: 1.02rem;
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
+      letter-spacing: -0.01em;
     }
 
     .role {
-      color: var(--ink-soft);
-      font-size: 0.85rem;
-      margin-top: 2px;
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      font-family: var(--font-mono);
     }
 
-    .arrow {
-      flex: none;
-      color: var(--ink-soft);
-      font-size: 1.2rem;
-      transition: transform 0.2s ease, color 0.2s ease;
+    .arrow-icon {
+      color: var(--text-dim);
+      font-size: 1.1rem;
+      transition: color var(--transition), transform var(--transition);
     }
 
-    .card:hover .arrow {
-      transform: translateX(3px);
-      color: var(--accent, var(--pink-deep));
+    .card:hover .arrow-icon {
+      color: var(--text-main);
+      transform: translateX(4px);
     }
 
-    footer {
-      margin-top: 64px;
-      color: var(--ink-soft);
-      font-size: 0.82rem;
+    /* Footer */
+    .footer {
       text-align: center;
+      margin-top: 3rem;
+      color: var(--text-dim);
+      font-size: 0.85rem;
+      font-family: var(--font-mono);
     }
   </style>
 </head>
 
 <body>
 
-  <div class="wrap">
-    <p class="eyebrow">Group Portfolio</p>
-    <h1>Trader Joe's — Team Showcase</h1>
-    <p class="sub">Explore each member's individual portfolio site below.</p>
+  <main class="container">
+    <header class="header">
+      <div class="badge">
+        <span class="badge-dot"></span>
+        <span>DLSU-D • IT Group Portfolio</span>
+      </div>
+      <h1>Trader Joe's</h1>
+      <p class="subtitle">Selected works, portfolios, and projects from our team members.</p>
+    </header>
 
     <ul class="grid">
       <li>
-        <a class="card" href="lim-jereign/index.html" style="--accent: var(--pink-deep);">
-          <span class="avatar">JL</span>
-          <span class="info">
-            <span class="name">Jereign B. Lim</span>
-            <span class="role">Portfolio</span>
-          </span>
-          <span class="arrow">→</span>
+        <a href="lim-jereign/index.html" class="card" style="--accent-color: var(--accent-pink);">
+          <div class="card-content">
+            <div class="avatar">JL</div>
+            <div class="info">
+              <span class="name">Jereign B. Lim</span>
+              <span class="role">/lim-jereign</span>
+            </div>
+          </div>
+          <span class="arrow-icon">&rarr;</span>
         </a>
       </li>
+
       <li>
-        <a class="card" href="sabino-matthewryan/index.html" style="--accent: var(--sage-deep);">
-          <span class="avatar">MS</span>
-          <span class="info">
-            <span class="name">Matthew Ryan Sabino</span>
-            <span class="role">Portfolio</span>
-          </span>
-          <span class="arrow">→</span>
+        <a href="sabino-matthewryan/index.html" class="card" style="--accent-color: var(--accent-sage);">
+          <div class="card-content">
+            <div class="avatar">MS</div>
+            <div class="info">
+              <span class="name">Matthew Ryan Sabino</span>
+              <span class="role">/sabino-matthewryan</span>
+            </div>
+          </div>
+          <span class="arrow-icon">&rarr;</span>
         </a>
       </li>
+
       <li>
-        <a class="card" href="delacruz-nicko/index.html" style="--accent: var(--amber);">
-          <span class="avatar">ND</span>
-          <span class="info">
-            <span class="name">Nicko Albert B. Dela Cruz</span>
-            <span class="role">Portfolio</span>
-          </span>
-          <span class="arrow">→</span>
+        <a href="delacruz-nicko/index.html" class="card" style="--accent-color: var(--accent-blue);">
+          <div class="card-content">
+            <div class="avatar">ND</div>
+            <div class="info">
+              <span class="name">Nicko Albert B. Dela Cruz</span>
+              <span class="role">/delacruz-nicko</span>
+            </div>
+          </div>
+          <span class="arrow-icon">&rarr;</span>
         </a>
       </li>
+
       <li>
-        <a class="card" href="ng-paulamitchel/index.html" style="--accent: var(--slate);">
-          <span class="avatar">PN</span>
-          <span class="info">
-            <span class="name">Paula Mitchel O. Ng</span>
-            <span class="role">Portfolio</span>
-          </span>
-          <span class="arrow">→</span>
+        <a href="ng-paulamitchel/index.html" class="card" style="--accent-color: var(--accent-amber);">
+          <div class="card-content">
+            <div class="avatar">PN</div>
+            <div class="info">
+              <span class="name">Paula Mitchel O. Ng</span>
+              <span class="role">/ng-paulamitchel</span>
+            </div>
+          </div>
+          <span class="arrow-icon">&rarr;</span>
         </a>
       </li>
-      <!-- Add more <li> entries here as teammates add their folders -->
     </ul>
 
-    <footer>Trader Joe's EA1 — Part 2</footer>
-  </div>
+    <footer class="footer">
+      <p>&copy; 2026 Trader Joe's Team</p>
+    </footer>
+  </main>
 
 </body>
 
