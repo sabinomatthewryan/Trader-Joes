@@ -93,6 +93,48 @@ a {
     border-bottom: 2px solid var(--text-primary);
 }
 
+.nav-actions {
+    align-items: center;
+    display: flex;
+    gap: 0.75rem;
+}
+
+.back-to-main-button {
+    align-items: center;
+    background-color: var(--bg-surface);
+    border: 1px solid var(--border-color);
+    border-radius: 9999px;
+    color: var(--text-secondary);
+    display: inline-flex;
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    font-weight: 500;
+    gap: 0.4rem;
+    height: 38px;
+    padding: 0 0.9rem;
+    text-decoration: none;
+    transition: background-color var(--transition-standard),
+        border-color var(--transition-standard),
+        color var(--transition-standard),
+        transform var(--transition-standard);
+}
+
+.back-to-main-button:hover {
+    background-color: var(--bg-surface-hover);
+    border-color: var(--border-color-hover);
+    color: var(--text-primary);
+    transform: translateX(-2px);
+}
+
+.back-arrow {
+    display: inline-block;
+    transition: transform var(--transition-standard);
+}
+
+.back-to-main-button:hover .back-arrow {
+    transform: translateX(-2px);
+}
+
 .theme-toggle-button {
     align-items: center;
     background-color: var(--bg-surface);
@@ -704,12 +746,21 @@ body.light-theme .theme-icon-light {
     font-size: 0.85rem;
 }
 
+.footer-links {
+    align-items: center;
+    display: flex;
+    gap: 1.5rem;
+}
+
+.back-to-main-footer,
 .back-to-top {
     color: var(--text-secondary);
     font-family: var(--font-mono);
     font-size: 0.85rem;
+    transition: color var(--transition-standard);
 }
 
+.back-to-main-footer:hover,
 .back-to-top:hover {
     color: var(--text-primary);
 }
