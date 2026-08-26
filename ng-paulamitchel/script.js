@@ -1,75 +1,110 @@
-(() => {
-  'use strict';
-  const yearEl = document.getElementById('year');
-  if (yearEl) yearEl.textContent = new Date().getFullYear();
+let yearElement = document.getElementById("year");
 
-  const navToggle = document.getElementById('navToggle');
-  const sidebar = document.getElementById('sidebarNav');
-  const scrim = document.getElementById('sidebarScrim');
+if (yearElement) {
+  yearElement.textContent = new Date().getFullYear();
+}
 
-  const openNav = () => {
-    sidebar.classList.add('is-open');
-    scrim.hidden = false;
-    navToggle.setAttribute('aria-expanded', 'true');
-    document.body.style.overflow = 'hidden';
-  };
+let navToggleElement = document.getElementById("nav_toggle");
+let sidebarElement = document.getElementById("sidebar_nav");
+let scrimElement = document.getElementById("sidebar_scrim");
 
-  const closeNav = () => {
-    sidebar.classList.remove('is-open');
-    scrim.hidden = true;
-    navToggle.setAttribute('aria-expanded', 'false');
-    document.body.style.overflow = '';
-  };
+function openNav() {
+  sidebarElement.classList.add("is-open");
+  scrimElement.hidden = false;
+  navToggleElement.setAttribute("aria-expanded", "true");
+  document.body.classList.add("no-scroll");
+}
 
-  if (navToggle) {
-    navToggle.addEventListener('click', () => {
-      const isOpen = sidebar.classList.contains('is-open');
-      isOpen ? closeNav() : openNav();
-    });
+function closeNav() {
+  sidebarElement.classList.remove("is-open");
+  scrimElement.hidden = true;
+  navToggleElement.setAttribute("aria-expanded", "false");
+  document.body.classList.remove("no-scroll");
+}
+
+function handleNavToggle() {
+  let isSidebarOpen = sidebarElement.classList.contains("is-open");
+
+  if (isSidebarOpen) {
+    closeNav();
+  } else {
+    openNav();
   }
+}
 
-  scrim && scrim.addEventListener('click', closeNav);
+if (navToggleElement) {
+  navToggleElement.addEventListener("click", handleNavToggle);
+}
 
-  document.querySelectorAll('[data-nav]').forEach((link) => {
-    link.addEventListener('click', () => {
-      if (window.matchMedia('(max-width: 959px)').matches) closeNav();
-    });
-  });
+if (scrimElement) {
+  scrimElement.addEventListener("click", closeNav);
+}
 
-  document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && sidebar.classList.contains('is-open')) {
-      closeNav();
-      navToggle.focus();
+function handleLinkClick() {
+  let isMobileWindow = window.matchMedia("(max-width: 959px)").matches;
+
+  if (isMobileWindow) {
+    closeNav();
+  }
+}
+
+let navLinks = document.querySelectorAll("[data-nav]");
+
+navLinks.forEach(function (link) {
+  link.addEventListener("click", handleLinkClick);
+});
+
+function handleKeydown(event) {
+  let isEscapeKey = event.key === "Escape";
+  let isSidebarOpen = sidebarElement.classList.contains("is-open");
+
+  if (isEscapeKey && isSidebarOpen) {
+    closeNav();
+    navToggleElement.focus();
+  }
+}
+
+document.addEventListener("keydown", handleKeydown);
+
+let navLinksArray = Array.from(navLinks);
+let sections = navLinksArray.map(function (link) {
+  let targetId = link.getAttribute("href");
+  return document.querySelector(targetId);
+}).filter(Boolean);
+
+function setActiveLink(id) {
+  navLinksArray.forEach(function (link) {
+    let isMatch = link.getAttribute("href") === `#${id}`;
+
+    if (isMatch) {
+      link.classList.add("is-active");
+      link.setAttribute("aria-current", "true");
+    } else {
+      link.classList.remove("is-active");
+      link.removeAttribute("aria-current");
     }
   });
+}
 
-  const navLinks = Array.from(document.querySelectorAll('[data-nav]'));
-  const sections = navLinks
-    .map((link) => document.querySelector(link.getAttribute('href')))
-    .filter(Boolean);
+function handleIntersect(entries) {
+  entries.forEach(function (entry) {
+    if (entry.isIntersecting) {
+      setActiveLink(entry.target.id);
+    }
+  });
+}
 
-  const setActive = (id) => {
-    navLinks.forEach((link) => {
-      const isMatch = link.getAttribute('href') === `#${id}`;
-      link.classList.toggle('is-active', isMatch);
-      if (isMatch) {
-        link.setAttribute('aria-current', 'true');
-      } else {
-        link.removeAttribute('aria-current');
-      }
-    });
+let hasObserver = "IntersectionObserver" in window;
+
+if (hasObserver && sections.length) {
+  let observerOptions = {
+    rootMargin: "-40% 0px -50% 0px",
+    threshold: 0
   };
 
-  if ('IntersectionObserver' in window && sections.length) {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) setActive(entry.target.id);
-        });
-      },
-      { rootMargin: '-40% 0px -50% 0px', threshold: 0 }
-    );
-    sections.forEach((section) => observer.observe(section));
-  }
+  let observer = new IntersectionObserver(handleIntersect, observerOptions);
 
-})();
+  sections.forEach(function (section) {
+    observer.observe(section);
+  });
+}
