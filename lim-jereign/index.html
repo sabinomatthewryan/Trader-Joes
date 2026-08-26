@@ -6,535 +6,14 @@
 <title>Jereign B. Lim — Portfolio</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<style>
-:root {
-  --ink: #1e1c22;
-  --ink-soft: #625d68;
-  --ink-faint: #94909a;
-  --paper: #fafaf9;
-  --white: #ffffff;
-  --line: #e6e3e0;
-
-  --pink: #e08aa6;
-  --pink-deep: #c85e80;
-  --pink-pale: #fbeef2;
-
-  --sage: #7fa377;
-  --sage-deep: #4f7548;
-  --sage-pale: #eef3ec;
-
-  --radius: 12px;
-  --shadow: 0 4px 16px rgba(30, 28, 34, 0.06);
-  --shadow-md: 0 8px 24px rgba(30, 28, 34, 0.09);
-  --font-display: 'Space Grotesk', sans-serif;
-  --font-body: 'Inter', sans-serif;
-  --dur: 0.2s;
-  --max: 1080px;
-}
-
-* { box-sizing: border-box; }
-
-html { scroll-behavior: smooth; }
-
-body {
-  margin: 0;
-  overflow-x: hidden;
-  font-family: var(--font-body);
-  color: var(--ink);
-  background: var(--paper);
-  transition: background var(--dur) ease, color var(--dur) ease;
-  font-size: 16px;
-  line-height: 1.6;
-}
-
-h1, h2, h3 { font-family: var(--font-display); margin: 0; letter-spacing: -0.01em; }
-
-a { text-decoration: none; color: inherit; }
-
-body.dark-mode {
-  --paper: #17151a;
-  --white: #1f1c22;
-  --pink-pale: #2b2027;
-  --sage-pale: #1c231a;
-  --line: #322e35;
-  --ink: #f1eef2;
-  --ink-soft: #b3adb8;
-  --ink-faint: #756f7c;
-}
-
-body.dark-mode .site-header { background: rgba(23, 21, 26, 0.9); }
-
-.site-header {
-  position: sticky;
-  top: 0;
-  z-index: 50;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 16px;
-  padding: 18px 6%;
-  background: rgba(250, 250, 249, 0.92);
-  backdrop-filter: blur(8px);
-  border-bottom: 1px solid var(--line);
-}
-
-.brand {
-  font-family: var(--font-display);
-  font-weight: 600;
-  font-size: 1.15rem;
-}
-.brand .dot { color: var(--pink-deep); }
-
-.nav { display: flex; gap: 32px; }
-
-.nav-link {
-  font-weight: 500;
-  font-size: 0.9rem;
-  color: var(--ink-soft);
-  position: relative;
-  padding: 4px 2px;
-  transition: color var(--dur);
-}
-.nav-link::after {
-  content: "";
-  position: absolute;
-  left: 0; bottom: -2px;
-  width: 0%;
-  height: 2px;
-  background: var(--ink);
-  transition: width var(--dur);
-}
-.nav-link:hover,
-.nav-link.active { color: var(--ink); }
-.nav-link:hover::after,
-.nav-link.active::after { width: 100%; }
-
-.icon-btn {
-  background: var(--white);
-  border: 1px solid var(--line);
-  color: var(--ink-soft);
-  width: 36px; height: 36px;
-  border-radius: 8px;
-  display: flex; align-items: center; justify-content: center;
-  cursor: pointer;
-  transition: border-color var(--dur), color var(--dur);
-}
-.icon-btn:hover { border-color: var(--ink); color: var(--ink); }
-
-.menu-btn {
-  display: none;
-  flex-direction: column;
-  justify-content: center;
-  gap: 5px;
-  width: 34px; height: 34px;
-  background: none;
-  border: none;
-  cursor: pointer;
-}
-.menu-btn span { height: 2px; background: var(--ink); transition: transform var(--dur), opacity var(--dur); }
-.menu-btn.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
-.menu-btn.open span:nth-child(2) { opacity: 0; }
-.menu-btn.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
-
-.scroll-bar { position: sticky; top: 0; z-index: 49; height: 2px; background: transparent; }
-.scroll-fill {
-  height: 100%; width: 0%;
-  background: var(--ink);
-  transition: width 0.1s linear;
-}
-
-.section { padding: 88px 0; }
-.section-inner { max-width: var(--max); margin: 0 auto; padding: 0 6%; }
-.section-tint {
-  background: var(--white);
-  border-top: 1px solid var(--line);
-  border-bottom: 1px solid var(--line);
-}
-
-.eyebrow {
-  font-weight: 600;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--pink-deep);
-  font-size: 0.75rem;
-  margin: 0 0 6px;
-}
-.section-title {
-  font-size: clamp(1.5rem, 2.6vw, 2rem);
-  margin-bottom: 4px;
-  padding-bottom: 16px;
-  border-bottom: 2px solid var(--line);
-}
-.section-sub { color: var(--ink-soft); margin-top: 14px; font-size: 0.95rem; }
-.center { text-align: center; }
-
-.hero {
-  max-width: var(--max);
-  margin: 0 auto;
-  padding: 64px 6% 60px;
-  position: relative;
-}
-
-.hero-top {
-  position: relative;
-  z-index: 1;
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  gap: 24px;
-  flex-wrap: wrap;
-}
-.hero-identity h1 { font-size: clamp(2rem, 4.5vw, 2.8rem); }
-.hero-title { color: var(--ink-soft); font-size: 0.92rem; font-weight: 500; letter-spacing: 0.02em; margin-top: 6px; }
-.hero-contact { list-style: none; margin: 4px 0 0; padding: 0; text-align: right; font-size: 0.85rem; color: var(--ink-soft); display: flex; flex-direction: column; gap: 4px; }
-.hero-contact a:hover { color: var(--pink-deep); }
-.hero-rule { height: 2px; background: var(--ink); margin: 28px 0 36px; }
-
-.hero-body {
-  position: relative;
-  z-index: 1;
-  max-width: 620px;
-}
-.hero-role { font-family: var(--font-display); font-size: clamp(1.4rem, 3vw, 1.9rem); font-weight: 600; min-height: 1.3em; margin-bottom: 16px; }
-
-.typing { border-right: 2px solid var(--pink); padding-right: 3px; }
-.hero-sub { color: var(--ink-soft); font-size: 1.02rem; margin: 0 0 30px; }
-
-.hero-actions { display: flex; gap: 14px; flex-wrap: wrap; }
-
-.btn {
-  display: inline-block;
-  font-family: var(--font-body);
-  font-weight: 600;
-  padding: 12px 26px;
-  border-radius: 8px;
-  border: 2px solid transparent;
-  cursor: pointer;
-  transition: transform var(--dur), box-shadow var(--dur), background var(--dur), color var(--dur), border-color var(--dur);
-  font-size: 0.92rem;
-}
-.btn-primary { background: var(--ink); color: var(--white); box-shadow: var(--shadow); }
-.btn-primary:hover { background: var(--pink-deep); box-shadow: var(--shadow-md); }
-.btn-outline { background: transparent; border-color: var(--line); color: var(--ink); }
-.btn-outline:hover { border-color: var(--ink); }
-.btn-block { width: 100%; }
-
-.about-grid { display: grid; grid-template-columns: 1.3fr 1fr; gap: 24px; margin-top: 32px; align-items: stretch; }
-.about-text {
-  background: var(--white);
-  border: 1px solid var(--line);
-  border-radius: var(--radius);
-  padding: 28px 26px;
-  box-shadow: var(--shadow);
-  color: var(--ink-soft);
-  margin: 0;
-}
-.education-card {
-  background: var(--white);
-  border: 1px solid var(--line);
-  border-top: 3px solid var(--sage-deep);
-  border-radius: var(--radius);
-  padding: 28px 26px;
-  box-shadow: var(--shadow);
-}
-.edu-label { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--sage-deep); margin: 0 0 10px; }
-.edu-school { font-family: var(--font-display); font-size: 1.05rem; margin-bottom: 4px; }
-.edu-degree { color: var(--ink-soft); font-size: 0.88rem; margin: 0 0 4px; }
-.edu-dates { color: var(--ink-faint); font-weight: 600; font-size: 0.8rem; margin: 0 0 18px; }
-.edu-stats { display: flex; gap: 28px; }
-.edu-stats div { display: flex; flex-direction: column; }
-.edu-stats strong { font-family: var(--font-display); font-size: 1.4rem; }
-.edu-stats span { font-size: 0.72rem; color: var(--ink-faint); font-weight: 600; }
-
-.skill-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin-top: 32px; }
-.skill-card {
-  position: relative;
-  background: var(--paper);
-  border: 1px solid var(--line);
-  border-radius: var(--radius);
-  padding: 22px 22px;
-  box-shadow: var(--shadow);
-  overflow: hidden;
-  opacity: 0;
-  transform: translateY(14px);
-  transition: box-shadow var(--dur), border-color var(--dur), transform 0.45s ease, opacity 0.45s ease;
-  transition-delay: 0s, 0s, var(--reveal-delay, 0s), var(--reveal-delay, 0s);
-}
-.section-tint .skill-card { background: var(--paper); }
-body.dark-mode .section-tint .skill-card { background: var(--white); }
-.skill-card.revealed { opacity: 1; transform: translateY(0); }
-.skill-card::before {
-  content: "";
-  position: absolute;
-  top: 0; left: 0; right: 0;
-  height: 3px;
-  transform: scaleX(0);
-  transform-origin: left;
-  transition: transform 0.35s ease;
-}
-.skill-card.accent-pink::before { background: var(--pink-deep); }
-.skill-card.accent-sage::before { background: var(--sage-deep); }
-.skill-card:hover { transform: translateY(-4px); }
-.skill-card.accent-pink:hover { box-shadow: 0 10px 26px rgba(200, 94, 128, 0.16); border-color: var(--pink); }
-.skill-card.accent-sage:hover { box-shadow: 0 10px 26px rgba(79, 117, 72, 0.16); border-color: var(--sage); }
-.skill-card:hover::before { transform: scaleX(1); }
-.skill-card-head { display: flex; align-items: center; gap: 10px; margin-bottom: 14px; }
-.skill-icon {
-  display: flex; align-items: center; justify-content: center;
-  width: 32px; height: 32px;
-  border-radius: 8px;
-  flex-shrink: 0;
-  transition: background var(--dur), color var(--dur), transform var(--dur);
-}
-.skill-card.accent-pink .skill-icon { background: var(--pink-pale); color: var(--pink-deep); }
-.skill-card.accent-sage .skill-icon { background: var(--sage-pale); color: var(--sage-deep); }
-.skill-card.accent-pink:hover .skill-icon { background: var(--pink-deep); color: var(--white); transform: rotate(-6deg) scale(1.05); }
-.skill-card.accent-sage:hover .skill-icon { background: var(--sage-deep); color: var(--white); transform: rotate(-6deg) scale(1.05); }
-.skill-card .skill-name {
-  font-family: var(--font-display);
-  font-weight: 600;
-  font-size: 0.95rem;
-  flex: 1;
-}
-.skill-count {
-  font-size: 0.7rem;
-  font-weight: 700;
-  color: var(--ink-faint);
-  background: var(--white);
-  border: 1px solid var(--line);
-  border-radius: 999px;
-  padding: 2px 8px;
-}
-.skill-pills { display: flex; flex-wrap: wrap; gap: 7px; }
-.skill-pill {
-  background: var(--white);
-  border: 1px solid var(--line);
-  color: var(--ink-soft);
-  font-size: 0.76rem;
-  font-weight: 500;
-  padding: 5px 11px;
-  border-radius: 999px;
-  transition: background var(--dur), color var(--dur), border-color var(--dur), transform var(--dur);
-  cursor: default;
-}
-.skill-card.accent-pink .skill-pill:hover { background: var(--pink-deep); border-color: var(--pink-deep); color: var(--white); transform: translateY(-2px); }
-.skill-card.accent-sage .skill-pill:hover { background: var(--sage-deep); border-color: var(--sage-deep); color: var(--white); transform: translateY(-2px); }
-
-.project-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; margin-top: 32px; }
-.project-card {
-  position: relative;
-  background: var(--white);
-  border: 1px solid var(--line);
-  border-radius: var(--radius);
-  padding: 24px 22px;
-  cursor: pointer;
-  box-shadow: var(--shadow);
-  transition: transform var(--dur), box-shadow var(--dur), border-color var(--dur);
-  border-top: 3px solid var(--line);
-}
-.project-card.accent-pink { border-top-color: var(--pink-deep); }
-.project-card.accent-sage { border-top-color: var(--sage-deep); }
-.project-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-md); }
-.project-card .tag {
-  display: inline-block;
-  font-size: 0.7rem;
-  font-weight: 600;
-  padding: 4px 10px;
-  border-radius: 6px;
-  margin-bottom: 10px;
-  background: var(--paper);
-  border: 1px solid var(--line);
-  color: var(--ink-soft);
-}
-.project-card h3 { font-size: 1.05rem; margin-bottom: 4px; }
-.project-subtitle { color: var(--ink-faint); font-size: 0.78rem; font-weight: 500; margin: 0 0 10px; }
-.project-card p { color: var(--ink-soft); font-size: 0.9rem; margin: 0; }
-.card-hint { margin-top: 14px; font-size: 0.78rem; font-weight: 600; color: var(--ink-faint); }
-.project-card:hover .card-hint { color: var(--ink); }
-
-.testimonial-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px; margin-top: 32px; }
-.testimonial-card {
-  background: var(--paper);
-  border: 1px solid var(--line);
-  border-top: 3px solid var(--pink-deep);
-  border-radius: var(--radius);
-  padding: 24px 22px;
-  box-shadow: var(--shadow);
-  transition: transform var(--dur), box-shadow var(--dur);
-}
-.testimonial-card:nth-child(2n) { border-top-color: var(--sage-deep); }
-.testimonial-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-md); }
-.testimonial-quote { font-style: italic; color: var(--ink-soft); margin: 0 0 14px; line-height: 1.6; }
-.testimonial-quote::before { content: "“"; }
-.testimonial-quote::after { content: "”"; }
-.testimonial-author { font-family: var(--font-display); font-weight: 600; font-size: 0.9rem; margin: 0; }
-
-.experience-list { display: flex; flex-direction: column; gap: 18px; margin-top: 32px; }
-.experience-item {
-  background: var(--white);
-  border: 1px solid var(--line);
-  border-left: 3px solid var(--line);
-  border-radius: var(--radius);
-  padding: 24px 24px;
-  box-shadow: var(--shadow);
-}
-.experience-item:nth-child(1) { border-left-color: var(--pink-deep); }
-.experience-item:nth-child(2) { border-left-color: var(--sage-deep); }
-.experience-head { display: flex; justify-content: space-between; align-items: flex-start; gap: 12px; flex-wrap: wrap; margin-bottom: 10px; }
-.experience-head h3 { font-size: 1.05rem; }
-.experience-org { color: var(--ink-soft); font-size: 0.85rem; margin: 2px 0 0; }
-.experience-dates {
-  font-size: 0.75rem; font-weight: 600; color: var(--ink-soft);
-  background: var(--paper); border: 1px solid var(--line);
-  padding: 5px 12px; border-radius: 6px; white-space: nowrap;
-}
-.experience-item ul { margin: 0; padding-left: 20px; color: var(--ink-soft); font-size: 0.9rem; line-height: 1.65; }
-
-.contact-grid { display: grid; grid-template-columns: 1fr 1.2fr; gap: 24px; margin-top: 32px; align-items: start; }
-.contact-info p { color: var(--ink-soft); }
-.contact-list { list-style: none; padding: 0; margin: 20px 0 0; display: flex; flex-direction: column; gap: 14px; }
-.contact-list li { display: flex; flex-direction: column; gap: 2px; }
-.contact-list span:first-child { font-size: 0.72rem; font-weight: 700; color: var(--ink-faint); text-transform: uppercase; letter-spacing: 0.06em; }
-.contact-list a { font-weight: 600; color: var(--ink); }
-.contact-list a:hover { color: var(--pink-deep); }
-
-.contact-card {
-  background: var(--white);
-  border: 1px solid var(--line);
-  border-radius: var(--radius);
-  padding: 32px 28px;
-  box-shadow: var(--shadow);
-}
-
-.field { margin-bottom: 16px; }
-.field label { display: block; font-weight: 600; font-size: 0.82rem; margin-bottom: 6px; color: var(--ink-soft); }
-.field input, .field textarea {
-  width: 100%; padding: 11px 13px; border-radius: 8px;
-  border: 1px solid var(--line); background: var(--paper); color: var(--ink);
-  font-family: var(--font-body); font-size: 0.92rem; resize: vertical;
-  transition: border-color var(--dur);
-}
-.field input:focus, .field textarea:focus { outline: none; border-color: var(--ink); }
-.field.invalid input, .field.invalid textarea { border-color: #c0455f; }
-.error { display: block; min-height: 18px; color: #c0455f; font-size: 0.76rem; font-weight: 600; margin-top: 4px; }
-.form-msg { text-align: center; font-weight: 600; min-height: 20px; margin: 12px 0 0; font-size: 0.9rem; }
-.form-msg.success { color: var(--sage-deep); }
-.form-msg.fail { color: #c0455f; }
-
-.site-footer { text-align: center; padding: 30px 6% 50px; color: var(--ink-faint); font-size: 0.82rem; border-top: 1px solid var(--line); }
-
-.modal-overlay {
-  position: fixed; inset: 0; background: rgba(30, 28, 34, 0.55);
-  display: flex; align-items: center; justify-content: center;
-  opacity: 0; pointer-events: none; transition: opacity var(--dur); z-index: 100; padding: 32px 20px;
-}
-.modal-overlay.open { opacity: 1; pointer-events: auto; }
-.modal-card {
-  background: var(--white); color: var(--ink); border-radius: var(--radius);
-  max-width: 480px; width: 100%; position: relative;
-  transform: translateY(16px); transition: transform var(--dur);
-  box-shadow: 0 24px 60px rgba(0,0,0,0.3);
-  max-height: 82vh;
-  overflow-y: auto;
-}
-.modal-card::-webkit-scrollbar { width: 6px; }
-.modal-card::-webkit-scrollbar-thumb { background: var(--line); border-radius: 6px; }
-.modal-card::-webkit-scrollbar-thumb:hover { background: var(--pink); }
-.modal-overlay.open .modal-card { transform: translateY(0); }
-
-.modal-header {
-  position: sticky;
-  top: 0;
-  z-index: 2;
-  background: var(--white);
-  padding: 28px 28px 20px;
-  border-bottom: 1px solid var(--line);
-}
-.modal-close {
-  position: absolute; top: 14px; right: 14px; background: var(--paper); border: 1px solid var(--line);
-  color: var(--ink-soft); width: 30px; height: 30px; border-radius: 8px; font-size: 1.1rem; cursor: pointer;
-  transition: border-color var(--dur), color var(--dur);
-}
-.modal-close:hover { border-color: var(--pink-deep); color: var(--pink-deep); }
-.modal-card .tag {
-  display: inline-block; background: var(--paper); border: 1px solid var(--line); color: var(--ink-soft);
-  font-size: 0.7rem; font-weight: 600; padding: 4px 10px; border-radius: 6px; margin-bottom: 10px;
-}
-.modal-card h3 { margin-bottom: 4px; font-size: 1.2rem; padding-right: 30px; }
-.modal-year-role { color: var(--ink-faint); font-size: 0.82rem; font-weight: 500; margin: 0; }
-
-.modal-body { padding: 24px 28px 28px; }
-
-.star-block { display: flex; flex-direction: column; gap: 16px; margin-bottom: 22px; }
-.star-item {
-  display: flex;
-  gap: 14px;
-  background: var(--paper);
-  border: 1px solid var(--line);
-  border-radius: 10px;
-  padding: 14px 16px;
-}
-.star-badge {
-  flex-shrink: 0;
-  width: 28px; height: 28px;
-  border-radius: 8px;
-  display: flex; align-items: center; justify-content: center;
-  font-family: var(--font-display);
-  font-weight: 700;
-  font-size: 0.85rem;
-  color: var(--white);
-}
-.star-s .star-badge, .star-a .star-badge { background: var(--pink-deep); }
-.star-t .star-badge, .star-r .star-badge { background: var(--sage-deep); }
-.star-item strong {
-  display: block; font-family: var(--font-display); font-size: 0.78rem;
-  color: var(--ink); margin-bottom: 4px; text-transform: uppercase; letter-spacing: 0.04em;
-}
-.star-item p { margin: 0; font-size: 0.88rem; line-height: 1.55; color: var(--ink-soft); }
-
-.stack-label {
-  font-size: 0.72rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase;
-  color: var(--ink-faint); margin: 0 0 10px; padding-top: 6px; border-top: 1px solid var(--line);
-}
-.stack-pills { display: flex; flex-wrap: wrap; gap: 7px; }
-.stack-pills span { background: var(--paper); border: 1px solid var(--line); color: var(--ink-soft); font-size: 0.76rem; font-weight: 500; padding: 5px 11px; border-radius: 999px; }
-
-.back-to-top {
-  position: fixed; bottom: 26px; right: 26px; width: 44px; height: 44px; border-radius: 8px;
-  background: var(--ink); color: var(--white); border: none; font-size: 1.1rem; cursor: pointer;
-  box-shadow: var(--shadow-md); opacity: 0; transform: translateY(10px); pointer-events: none;
-  transition: opacity var(--dur), transform var(--dur), background var(--dur); z-index: 60;
-}
-.back-to-top.show { opacity: 1; transform: translateY(0); pointer-events: auto; }
-.back-to-top:hover { background: var(--pink-deep); }
-
-@media (max-width: 800px) {
-  .menu-btn { display: flex; }
-  .nav {
-    position: absolute; top: 100%; left: 0; right: 0; flex-direction: column;
-    background: var(--white); padding: 18px 6%; gap: 16px;
-    box-shadow: var(--shadow-md); border-bottom: 1px solid var(--line);
-    transform: translateY(-8px); opacity: 0; pointer-events: none;
-    transition: transform var(--dur), opacity var(--dur);
-  }
-  .nav.show { transform: translateY(0); opacity: 1; pointer-events: auto; }
-  .hero-top { flex-direction: column; }
-  .hero-contact { text-align: left; }
-  .about-grid, .contact-grid { grid-template-columns: 1fr; }
-}
-
-@media (max-width: 480px) {
-  .section { padding: 56px 0; }
-  .contact-card { padding: 26px 20px; }
-}
-</style>
+<link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
   <header class="site-header">
     <div class="brand">Jereign<span class="dot">.</span>Lim</div>
 
-    <button id="menuBtn" class="menu-btn" aria-label="toggle navigation" aria-expanded="false">
+    <button id="menu_btn" class="menu-btn" aria-label="toggle navigation" aria-expanded="false">
       <span></span><span></span><span></span>
     </button>
 
@@ -547,18 +26,18 @@ body.dark-mode .section-tint .skill-card { background: var(--white); }
       <a href="#contact" class="nav-link">Contact</a>
     </nav>
 
-    <button id="darkModeToggle" class="icon-btn" aria-label="toggle dark mode">
-      <svg id="iconSun" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+    <button id="dark_mode_toggle" class="icon-btn" aria-label="toggle dark mode">
+      <svg id="icon_sun" class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
         <circle cx="12" cy="12" r="4"></circle>
         <path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"></path>
       </svg>
-      <svg id="iconMoon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" style="display:none">
+      <svg id="icon_moon" class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
         <path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"></path>
       </svg>
     </button>
   </header>
 
-  <div class="scroll-bar"><div id="scrollFill" class="scroll-fill"></div></div>
+  <div class="scroll-bar"><div id="scroll_fill" class="scroll-fill"></div></div>
 
   <main>
 
@@ -579,7 +58,7 @@ body.dark-mode .section-tint .skill-card { background: var(--white); }
       <div class="hero-rule"></div>
 
       <div class="hero-body">
-        <p class="hero-role"><span class="typing" id="typingTarget"></span></p>
+        <p class="hero-role"><span class="typing" id="typing_target"></span></p>
         <p class="hero-sub">
           An aspiring web developer and Information Technology student with hands-on experience in
           full-stack web application development, mobile systems development, and UI/UX design. I'm
@@ -624,7 +103,7 @@ body.dark-mode .section-tint .skill-card { background: var(--white); }
         <p class="eyebrow">Technical Toolkit</p>
         <h2 class="section-title">Skills</h2>
         <p class="section-sub">Core technologies and competencies I've applied across academic and personal projects.</p>
-        <div id="skillGrid" class="skill-grid"></div>
+        <div id="skill_grid" class="skill-grid"></div>
       </div>
     </section>
 
@@ -633,7 +112,7 @@ body.dark-mode .section-tint .skill-card { background: var(--white); }
         <p class="eyebrow">Academic Projects</p>
         <h2 class="section-title">Projects</h2>
         <p class="section-sub">Select a project to see the full situation–task–action–result breakdown.</p>
-        <div id="projectList" class="project-grid"></div>
+        <div id="project_list" class="project-grid"></div>
       </div>
     </section>
 
@@ -642,12 +121,11 @@ body.dark-mode .section-tint .skill-card { background: var(--white); }
         <p class="eyebrow">What People Say</p>
         <h2 class="section-title">Testimonials</h2>
         <p class="section-sub">Words from teammates I've collaborated with.</p>
-        <div id="testimonialGrid" class="testimonial-grid">
+        <div id="testimonial_grid" class="testimonial-grid">
           <div class="testimonial-card">
-            <p class="testimonial-quote">Sample comment</p>
-            <p class="testimonial-author">— Teammate</p>
+            <p class="testimonial-quote">SAMPLE COMMENT</p>
+            <p class="testimonial-author">— Sample Teammate, Project Collaborator</p>
           </div>
-
         </div>
       </div>
     </section>
@@ -656,7 +134,7 @@ body.dark-mode .section-tint .skill-card { background: var(--white); }
       <div class="section-inner">
         <p class="eyebrow">Leadership &amp; Experience</p>
         <h2 class="section-title">Experience</h2>
-        <div id="experienceList" class="experience-list"></div>
+        <div id="experience_list" class="experience-list"></div>
       </div>
     </section>
 
@@ -676,24 +154,24 @@ body.dark-mode .section-tint .skill-card { background: var(--white); }
           </div>
 
           <div class="contact-card">
-            <form id="contactForm" novalidate>
+            <form id="contact_form" novalidate>
               <div class="field">
                 <label for="name">Name</label>
                 <input type="text" id="name" placeholder="Your name">
-                <span class="error" id="nameError"></span>
+                <span class="error" id="name_error"></span>
               </div>
               <div class="field">
                 <label for="email">Email</label>
                 <input type="email" id="email" placeholder="you@email.com">
-                <span class="error" id="emailError"></span>
+                <span class="error" id="email_error"></span>
               </div>
               <div class="field">
                 <label for="message">Message</label>
                 <textarea id="message" rows="4" placeholder="What would you like to discuss?"></textarea>
-                <span class="error" id="messageError"></span>
+                <span class="error" id="message_error"></span>
               </div>
               <button type="submit" class="btn btn-primary btn-block">Send Message</button>
-              <p id="formMsg" class="form-msg" role="status"></p>
+              <p id="form_msg" class="form-msg" role="status"></p>
             </form>
           </div>
         </div>
@@ -705,397 +183,41 @@ body.dark-mode .section-tint .skill-card { background: var(--white); }
     <p>Jereign B. Lim — Information Technology Student, Web Development Specialization</p>
   </footer>
 
-  <div id="projectModal" class="modal-overlay">
-    <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+  <div id="project_modal" class="modal-overlay">
+    <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="modal_title">
       <div class="modal-header">
-        <button id="modalClose" class="modal-close" aria-label="close">&times;</button>
-        <span id="modalTag" class="tag"></span>
-        <h3 id="modalTitle"></h3>
-        <p id="modalYearRole" class="modal-year-role"></p>
+        <button id="modal_close" class="modal-close" aria-label="close">&times;</button>
+        <span id="modal_tag" class="tag"></span>
+        <h3 id="modal_title"></h3>
+        <p id="modal_year_role" class="modal-year-role"></p>
       </div>
       <div class="modal-body">
         <div class="star-block">
           <div class="star-item star-s">
             <span class="star-badge">S</span>
-            <div><strong>Situation</strong><p id="modalSituation"></p></div>
+            <div><strong>Situation</strong><p id="modal_situation"></p></div>
           </div>
           <div class="star-item star-t">
             <span class="star-badge">T</span>
-            <div><strong>Task</strong><p id="modalTask"></p></div>
+            <div><strong>Task</strong><p id="modal_task"></p></div>
           </div>
           <div class="star-item star-a">
             <span class="star-badge">A</span>
-            <div><strong>Action</strong><p id="modalAction"></p></div>
+            <div><strong>Action</strong><p id="modal_action"></p></div>
           </div>
           <div class="star-item star-r">
             <span class="star-badge">R</span>
-            <div><strong>Result</strong><p id="modalResult"></p></div>
+            <div><strong>Result</strong><p id="modal_result"></p></div>
           </div>
         </div>
         <p class="stack-label">Tech Stack</p>
-        <div id="modalStack" class="stack-pills"></div>
+        <div id="modal_stack" class="stack-pills"></div>
       </div>
     </div>
   </div>
 
-  <button id="backToTop" class="back-to-top" aria-label="back to top">↑</button>
+  <button id="back_to_top" class="back-to-top" aria-label="back to top">↑</button>
 
-<script>
-const menuBtn = document.getElementById("menuBtn");
-const nav = document.getElementById("nav");
-
-menuBtn.addEventListener("click", () => {
-  const isOpen = nav.classList.toggle("show");
-  menuBtn.classList.toggle("open", isOpen);
-  menuBtn.setAttribute("aria-expanded", isOpen);
-});
-
-nav.querySelectorAll(".nav-link").forEach(link => {
-  link.addEventListener("click", () => {
-    nav.classList.remove("show");
-    menuBtn.classList.remove("open");
-    menuBtn.setAttribute("aria-expanded", "false");
-  });
-});
-
-const darkModeToggle = document.getElementById("darkModeToggle");
-const iconSun = document.getElementById("iconSun");
-const iconMoon = document.getElementById("iconMoon");
-
-darkModeToggle.addEventListener("click", () => {
-  const isDark = document.body.classList.toggle("dark-mode");
-  iconSun.style.display = isDark ? "none" : "block";
-  iconMoon.style.display = isDark ? "block" : "none";
-});
-
-const typingTarget = document.getElementById("typingTarget");
-const typingWords = ["Web Developer", "IT Student", "UI/UX Designer", "Systems Developer"];
-let wordIndex = 0, charIndex = 0, deleting = false;
-
-function typeLoop() {
-  const currentWord = typingWords[wordIndex];
-
-  if (!deleting) {
-    charIndex++;
-    typingTarget.textContent = currentWord.slice(0, charIndex);
-    if (charIndex === currentWord.length) {
-      deleting = true;
-      setTimeout(typeLoop, 1400);
-      return;
-    }
-  } else {
-    charIndex--;
-    typingTarget.textContent = currentWord.slice(0, charIndex);
-    if (charIndex === 0) {
-      deleting = false;
-      wordIndex = (wordIndex + 1) % typingWords.length;
-    }
-  }
-  setTimeout(typeLoop, deleting ? 60 : 110);
-}
-typeLoop();
-
-const skillGroups = [
-  {
-    category: "Programming & Development",
-    icon: "M8 9l-4 3 4 3M16 9l4 3-4 3M13 6l-2 12",
-    items: ["ReactJS", "C#", "Java", "Python", "PHP"]
-  },
-  {
-    category: "Database",
-    icon: "M4 6c0-1.1 3.6-2 8-2s8 .9 8 2-3.6 2-8 2-8-.9-8-2zM4 6v12c0 1.1 3.6 2 8 2s8-.9 8-2V6M4 12c0 1.1 3.6 2 8 2s8-.9 8-2",
-    items: ["MySQL", "Firebase"]
-  },
-  {
-    category: "Web Technologies",
-    icon: "M3 5h18M3 5v14h18V5M8 12l2 2-2 2M14 16h2",
-    items: ["HTML", "CSS", "CRUD Operations"]
-  },
-  {
-    category: "Tools & Platforms",
-    icon: "M14.7 6.3a1 1 0 010 1.4l-7 7a1 1 0 01-1.4 0l-2-2a1 1 0 011.4-1.4l1.3 1.3 6.3-6.3a1 1 0 011.4 0zM19 12a7 7 0 11-3.5-6.06",
-    items: ["Visual Studio 2022", "VS Code", "Android Studio", "Figma", "Canva"]
-  },
-  {
-    category: "Core Competencies",
-    icon: "M12 2l2.4 5 5.6.8-4 4 1 5.6L12 15l-5 2.4 1-5.6-4-4 5.6-.8z",
-    items: ["UI/UX Design", "System Development", "Responsive Web Design", "CRUD System Implementation", "Basic Database Design", "Debugging & Troubleshooting"]
-  },
-  {
-    category: "Soft Skills",
-    icon: "M12 21s-7-4.5-9.5-9A5.5 5.5 0 0112 6a5.5 5.5 0 019.5 6c-2.5 4.5-9.5 9-9.5 9z",
-    items: ["Problem-Solving", "Team Collaboration", "Initiative", "Time Management", "Adaptability"]
-  }
-];
-
-const skillGrid = document.getElementById("skillGrid");
-skillGroups.forEach((group, i) => {
-  const card = document.createElement("div");
-  const accent = i % 2 === 0 ? "accent-pink" : "accent-sage";
-  card.className = `skill-card ${accent}`;
-  card.style.setProperty("--reveal-delay", `${i * 70}ms`);
-  card.innerHTML = `
-    <div class="skill-card-head">
-      <span class="skill-icon">
-        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-          <path d="${group.icon}"></path>
-        </svg>
-      </span>
-      <span class="skill-name">${group.category}</span>
-      <span class="skill-count">${group.items.length}</span>
-    </div>
-    <div class="skill-pills">
-      ${group.items.map(item => `<span class="skill-pill">${item}</span>`).join("")}
-    </div>
-  `;
-  skillGrid.appendChild(card);
-});
-
-const skillObserver = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add("revealed");
-      skillObserver.unobserve(entry.target);
-    }
-  });
-}, { threshold: 0.15 });
-
-document.querySelectorAll("#skillGrid .skill-card").forEach(card => skillObserver.observe(card));
-
-const projects = [
-  {
-    title: "GovAssist",
-    subtitle: "Centralized Government Directory Web Platform",
-    year: "2025",
-    tag: "Web Developer",
-    role: "Web Developer · Team of 2",
-    situation: "Many citizens struggle to access verified government websites, service guides, and scam alerts due to scattered and unreliable information sources.",
-    task: "Develop a centralized web platform providing verified government directories, step-by-step service guides, scam protection tools, and emergency response information.",
-    action: "Built a full-stack application using React, PHP, SQL, and Firebase; implemented CRUD-based directory management, branch-specific office details, structured guides for common services, scam verification and reporting features, and emergency hotline modules.",
-    result: "Delivered a centralized assistance platform that improved accessibility to official government services, reduced misinformation risks, and streamlined public service guidance.",
-    stack: ["React", "PHP", "SQL", "Firebase"]
-  },
-  {
-    title: "Mobile Loan System Calculator",
-    subtitle: "Android Loan Computation App",
-    year: "2025",
-    tag: "Mobile App Developer",
-    role: "Mobile App Developer · Team of 3",
-    situation: "A cooperative required a mobile-based system capable of handling multiple loan types with structured interest rate rules and approval workflows.",
-    task: "Develop a functional Android application supporting member registration, loan computation, and role-based user and admin access.",
-    action: "Implemented financial computation logic in a separate Java class, built authentication and database integration, designed a GUI with a navigation drawer, and applied structured error handling.",
-    result: "Delivered a functional mobile loan system capable of calculating interest, service charges, take-home loan values, and monthly amortization with role-based control.",
-    stack: ["Java", "Android Studio", "SQL"]
-  },
-  {
-    title: "TechLib",
-    subtitle: "Laboratory Equipment Management System",
-    year: "2025",
-    tag: "Systems Developer",
-    role: "Systems Developer · Team of 2",
-    situation: "Laboratory equipment borrowing lacked structured monitoring, user tracking, and role-based access control.",
-    task: "Develop a desktop-based system to manage equipment inventory, borrowing/return transactions, and user records with Admin and User roles.",
-    action: "Designed a database structure with 30+ student records, implemented an Admin module (equipment management, account management, record viewing, password recovery), a borrowing/return module with timestamp tracking, and role-based access using MDI Forms in C#.",
-    result: "Delivered a structured laboratory management system, improving inventory control, transaction logging, and access security.",
-    stack: ["C#", "MySQL", "MDI Forms"]
-  },
-  {
-    title: "Medical Application UI/UX Case Study",
-    subtitle: "Accessible Healthcare Mobile Interface",
-    year: "2024",
-    tag: "Frontend Designer",
-    role: "Frontend Designer · Team of 4",
-    situation: "Elderly users often struggle with complex mobile healthcare interfaces.",
-    task: "Design an accessible and user-friendly healthcare mobile interface tailored for elderly users.",
-    action: "Created high-fidelity prototypes in Figma, applying accessibility standards, simplified navigation, and usability principles.",
-    result: "Produced an intuitive mobile interface prototype optimized for readability and ease of use.",
-    stack: ["Figma", "UI/UX Design"]
-  }
-];
-
-const projectList = document.getElementById("projectList");
-const modal = document.getElementById("projectModal");
-const modalTag = document.getElementById("modalTag");
-const modalTitle = document.getElementById("modalTitle");
-const modalYearRole = document.getElementById("modalYearRole");
-const modalSituation = document.getElementById("modalSituation");
-const modalTask = document.getElementById("modalTask");
-const modalAction = document.getElementById("modalAction");
-const modalResult = document.getElementById("modalResult");
-const modalStack = document.getElementById("modalStack");
-const modalClose = document.getElementById("modalClose");
-
-projects.forEach((p, i) => {
-  const card = document.createElement("div");
-  const accent = i % 2 === 0 ? "accent-pink" : "accent-sage";
-  card.className = `project-card ${accent}`;
-  card.innerHTML = `
-    <span class="tag">${p.tag}</span>
-    <h3>${p.title}</h3>
-    <p class="project-subtitle">${p.subtitle} · ${p.year}</p>
-    <p>${p.result}</p>
-    <div class="card-hint">view details →</div>
-  `;
-  card.addEventListener("click", () => openModal(i));
-  projectList.appendChild(card);
-});
-
-function openModal(index) {
-  const p = projects[index];
-  modalTag.textContent = p.tag;
-  modalTitle.textContent = `${p.title} — ${p.subtitle}`;
-  modalYearRole.textContent = `${p.role} · ${p.year}`;
-  modalSituation.textContent = p.situation;
-  modalTask.textContent = p.task;
-  modalAction.textContent = p.action;
-  modalResult.textContent = p.result;
-  modalStack.innerHTML = p.stack.map(t => `<span>${t}</span>`).join("");
-  modal.classList.add("open");
-}
-
-function closeModal() {
-  modal.classList.remove("open");
-}
-
-modalClose.addEventListener("click", closeModal);
-modal.addEventListener("click", e => {
-  if (e.target === modal) closeModal();
-});
-document.addEventListener("keydown", e => {
-  if (e.key === "Escape") closeModal();
-});
-
-const experience = [
-  {
-    title: "Director of Treasury",
-    org: "Information Technology Program Council",
-    dates: "Sept 2025 – May 2026",
-    points: [
-      "Manage financial records and transaction documentation",
-      "Monitor inflow and outflow of organizational funds",
-      "Ensure structured and accountable financial reporting"
-    ]
-  },
-  {
-    title: "Small Business Owner",
-    org: "Maart.Chich",
-    dates: "2021 – 2025",
-    points: [
-      "Founded and independently managed a handmade product brand",
-      "Oversaw product design, marketing, customer transactions, and logistics",
-      "Participated in university bazaars and managed end-to-end operations independently"
-    ]
-  }
-];
-
-const experienceList = document.getElementById("experienceList");
-experience.forEach(e => {
-  const item = document.createElement("div");
-  item.className = "experience-item";
-  item.innerHTML = `
-    <div class="experience-head">
-      <div>
-        <h3>${e.title}</h3>
-        <p class="experience-org">${e.org}</p>
-      </div>
-      <span class="experience-dates">${e.dates}</span>
-    </div>
-    <ul>${e.points.map(pt => `<li>${pt}</li>`).join("")}</ul>
-  `;
-  experienceList.appendChild(item);
-});
-
-const contactForm = document.getElementById("contactForm");
-const nameInput = document.getElementById("name");
-const emailInput = document.getElementById("email");
-const messageInput = document.getElementById("message");
-const formMsg = document.getElementById("formMsg");
-
-function setError(input, errorId, message) {
-  const errorEl = document.getElementById(errorId);
-  const field = input.closest(".field");
-  if (message) {
-    errorEl.textContent = message;
-    field.classList.add("invalid");
-  } else {
-    errorEl.textContent = "";
-    field.classList.remove("invalid");
-  }
-}
-
-function isValidEmail(value) {
-  return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
-}
-
-contactForm.addEventListener("submit", e => {
-  e.preventDefault();
-
-  let valid = true;
-
-  if (nameInput.value.trim().length < 2) {
-    setError(nameInput, "nameError", "please enter your name");
-    valid = false;
-  } else {
-    setError(nameInput, "nameError", "");
-  }
-
-  if (!isValidEmail(emailInput.value.trim())) {
-    setError(emailInput, "emailError", "please enter a valid email");
-    valid = false;
-  } else {
-    setError(emailInput, "emailError", "");
-  }
-
-  if (messageInput.value.trim().length < 10) {
-    setError(messageInput, "messageError", "message should be at least 10 characters");
-    valid = false;
-  } else {
-    setError(messageInput, "messageError", "");
-  }
-
-  if (valid) {
-    formMsg.textContent = "Message sent successfully. I'll get back to you soon.";
-    formMsg.className = "form-msg success";
-    contactForm.reset();
-  } else {
-    formMsg.textContent = "Please fix the highlighted fields.";
-    formMsg.className = "form-msg fail";
-  }
-});
-
-const sections = document.querySelectorAll("section[id]");
-const navLinks = document.querySelectorAll(".nav-link");
-const scrollFill = document.getElementById("scrollFill");
-const backToTop = document.getElementById("backToTop");
-
-function onScroll() {
-  let current = sections[0] ? sections[0].id : "";
-  const scrollPos = window.scrollY + window.innerHeight * 0.35;
-
-  sections.forEach(section => {
-    if (scrollPos >= section.offsetTop) {
-      current = section.id;
-    }
-  });
-
-  navLinks.forEach(link => {
-    link.classList.toggle("active", link.getAttribute("href") === `#${current}`);
-  });
-
-  const scrollTop = window.scrollY;
-  const docHeight = document.documentElement.scrollHeight - window.innerHeight;
-  const progress = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
-  scrollFill.style.width = `${progress}%`;
-
-  backToTop.classList.toggle("show", scrollTop > 400);
-}
-
-window.addEventListener("scroll", onScroll);
-onScroll();
-
-backToTop.addEventListener("click", () => {
-  window.scrollTo({ top: 0, behavior: "smooth" });
-});
-</script>
+  <script src="script.js"></script>
 </body>
 </html>
